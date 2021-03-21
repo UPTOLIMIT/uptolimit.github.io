@@ -598,30 +598,30 @@ warnings<span class="token punctuation">.</span>filterwarnings<span class="token
     
     <span class="token keyword">return</span> embedding_layers_dict
 </code></pre>
-<pre><code>def get_linear_logits(dense_input_dict, sparse_input_dict, sparse_feature_columns):
-    # 将所有的dense特征的Input层，经过一个全连接层得到dense特征的logits
-    concat_dense_inputs = Concatenate(axis=1)(list(dense_input_dict.values()))
-    dense_logits_output = Dense(1)(concat_dense_inputs)
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_linear_logits</span><span class="token punctuation">(</span>dense_input_dict<span class="token punctuation">,</span> sparse_input_dict<span class="token punctuation">,</span> sparse_feature_columns<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 将所有的dense特征的Input层，经过一个全连接层得到dense特征的logits</span>
+    concat_dense_inputs <span class="token operator">=</span> Concatenate<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span>list<span class="token punctuation">(</span>dense_input_dict<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    dense_logits_output <span class="token operator">=</span> Dense<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span>concat_dense_inputs<span class="token punctuation">)</span>
     
-    # 获取linear部分sparse特征的embedding层，这里使用embedding的原因是：
-    # 对于linear部分直接将特征进行onehot然后通过一个全连接层，当维度特别大的时候，计算比较慢
-    # 使用embedding层的好处就是可以通过查表的方式获取到哪些非零的元素对应的权重，然后在将这些权重相加，效率比较高
-    linear_embedding_layers = build_embedding_layers(sparse_feature_columns, sparse_input_dict, is_linear=True)
+    <span class="token comment" spellcheck="true"># 获取linear部分sparse特征的embedding层，这里使用embedding的原因是：</span>
+    <span class="token comment" spellcheck="true"># 对于linear部分直接将特征进行onehot然后通过一个全连接层，当维度特别大的时候，计算比较慢</span>
+    <span class="token comment" spellcheck="true"># 使用embedding层的好处就是可以通过查表的方式获取到哪些非零的元素对应的权重，然后在将这些权重相加，效率比较高</span>
+    linear_embedding_layers <span class="token operator">=</span> build_embedding_layers<span class="token punctuation">(</span>sparse_feature_columns<span class="token punctuation">,</span> sparse_input_dict<span class="token punctuation">,</span> is_linear<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
     
-    # 将一维的embedding拼接，注意这里需要使用一个Flatten层，使维度对应
-    sparse_1d_embed = []
-    for fc in sparse_feature_columns:
-        feat_input = sparse_input_dict[fc.name]
-        embed = Flatten()(linear_embedding_layers[fc.name](feat_input)) # B x 1
-        sparse_1d_embed.append(embed)
+    <span class="token comment" spellcheck="true"># 将一维的embedding拼接，注意这里需要使用一个Flatten层，使维度对应</span>
+    sparse_1d_embed <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> fc <span class="token keyword">in</span> sparse_feature_columns<span class="token punctuation">:</span>
+        feat_input <span class="token operator">=</span> sparse_input_dict<span class="token punctuation">[</span>fc<span class="token punctuation">.</span>name<span class="token punctuation">]</span>
+        embed <span class="token operator">=</span> Flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span>linear_embedding_layers<span class="token punctuation">[</span>fc<span class="token punctuation">.</span>name<span class="token punctuation">]</span><span class="token punctuation">(</span>feat_input<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># B x 1</span>
+        sparse_1d_embed<span class="token punctuation">.</span>append<span class="token punctuation">(</span>embed<span class="token punctuation">)</span>
 
-    # embedding中查询得到的权重就是对应onehot向量中一个位置的权重，所以后面不用再接一个全连接了，本身一维的embedding就相当于全连接
-    # 只不过是这里的输入特征只有0和1，所以直接向非零元素对应的权重相加就等同于进行了全连接操作(非零元素部分乘的是1)
-    sparse_logits_output = Add()(sparse_1d_embed)
+    <span class="token comment" spellcheck="true"># embedding中查询得到的权重就是对应onehot向量中一个位置的权重，所以后面不用再接一个全连接了，本身一维的embedding就相当于全连接</span>
+    <span class="token comment" spellcheck="true"># 只不过是这里的输入特征只有0和1，所以直接向非零元素对应的权重相加就等同于进行了全连接操作(非零元素部分乘的是1)</span>
+    sparse_logits_output <span class="token operator">=</span> Add<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span>sparse_1d_embed<span class="token punctuation">)</span>
 
-    # 最终将dense特征和sparse特征对应的logits相加，得到最终linear的logits
-    linear_logits = Add()([dense_logits_output, sparse_logits_output])
-    return linear_logits
+    <span class="token comment" spellcheck="true"># 最终将dense特征和sparse特征对应的logits相加，得到最终linear的logits</span>
+    linear_logits <span class="token operator">=</span> Add<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">[</span>dense_logits_output<span class="token punctuation">,</span> sparse_logits_output<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> linear_logits
 </code></pre>
 <p>将所有的稀疏特征的embedding拼接</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">concat_embedding_list</span><span class="token punctuation">(</span>feature_columns<span class="token punctuation">,</span> input_layer_dict<span class="token punctuation">,</span> embedding_layer_dict<span class="token punctuation">,</span> flatten<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -949,18 +949,17 @@ warnings<span class="token punctuation">.</span>filterwarnings<span class="token
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/21/wide-deep-lun-wen-jie-xi-yu-dai-ma-shi-xian/">
+                <a href="/2021/03/21/deepfm-li-lun-yu-shi-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Wide&amp;Deep论文解析与代码实现">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="DeepFM理论与实践">
                         
-                        <span class="card-title">Wide&amp;Deep论文解析与代码实现</span>
+                        <span class="card-title">DeepFM理论与实践</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -970,9 +969,9 @@ warnings<span class="token punctuation">.</span>filterwarnings<span class="token
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-21
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-21
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -985,7 +984,6 @@ warnings<span class="token punctuation">.</span>filterwarnings<span class="token
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
