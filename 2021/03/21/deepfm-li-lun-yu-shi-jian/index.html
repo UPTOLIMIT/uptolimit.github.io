@@ -491,7 +491,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="理论背景"><a href="#理论背景" class="headerlink" title="理论背景"></a>理论背景</h2><p>DeepFM模型是2017年哈工大深圳与华为诺亚方舟联合实验室提出的，论文名称《<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1703.04247">DeepFM: A Factorization-Machine based Neural Network for CTR Prediction</a>》，DFM模型是在W&amp;D模型上的改进，W&amp;D模型理论参照上一篇<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/358174532">笔记</a>，在W&amp;D的基础上，将Wide部分替换为FM模型，不再需要人工特征工程，同时巧妙地在FM的二阶部分和神经网络的Embedding层共享权重，减少了大量参数，极大的提高了训练速度。</p>
-<p>在CTR预估任务中，业界常用的方法有人工特征工程+逻辑回归、梯度增强决策树(GBDT)+逻辑回归，FM(Factorization Machine)和FFM(Field-aware Factorization Machine)模型，在这些模型中FM、FFM模型表现突出。</p>
+<p>在CTR预估任务中，业界常用的方法有人工特征工程+逻辑回归、梯度增强决策树（GBDT）+逻辑回归，FM（Factorization Machine）和FFM（Field-aware Factorization Machine）模型，在这些模型中FM、FFM模型表现突出。</p>
 <h2 id="FM模型"><a href="#FM模型" class="headerlink" title="FM模型"></a>FM模型</h2><p>在学习DFM之前，先简单的学习一下FM模型和FFM模型，FM模型是由Konstanz 大学 Steffen Rendle于2010年提出，旨在解决稀疏数据下的特征组合问题。下面我们用一个<a target="_blank" rel="noopener" href="http://www.cs.cmu.edu/~wcohen/10-605/2015-guest-lecture/FM.pdf">例子</a>引入FM模型，假设我们要处理一个广告问题，根据用户和广告类型特征，预测用户是否点击了广告。</p>
 <div class="table-container">
 <table>
