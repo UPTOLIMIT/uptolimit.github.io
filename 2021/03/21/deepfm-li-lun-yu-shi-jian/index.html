@@ -31,9 +31,9 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="/custom_css_source.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="深自缄默，如云漂泊" type="application/atom+xml">
-
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="深自缄默，如云漂泊" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -579,12 +579,12 @@
 <p>通过观察大量样本数据可以发现，某些特征经过关联之后，与label之间的相关性就会提高，例如，“USA”与“Thanksgiving”、“China”与“Chinese New Year”这样的关联特征。对用户的点击行为有着正向的影响。同样，“化妆品”类商品与“女性”，“球类运动”类商品与“男”性，可见这种关联特征也是普遍存在的，因此进行特征的组合是非常有意义的。</p>
 <p>在众多模型中，多项式模型是包含特征组合的最直观的模型。在多项式模型中，特征$x_i$和$x_j$的组合我们采用$x_ix_j$表示，即$x_i$和$x_j$都非零时，组合特征$x_ix_j$才有意义，在这里我们只讨论二阶多项式模型。表达式如下：</p>
 <script type="math/tex; mode=display">
-y(x)=w_0+\sum^{n}_{i=1}{w_ix_i}+\sum^{n}_{i=1}\sum^{n}_{j=i+1}{w_{ij}x_ix_j}</script><p>其中，$n$代表样本的特征数量，$x<em>i$是第$i$个特征的值，$w_0$、$w_i$、$w</em>{ij}$是模型参数。</p>
-<p>在多项式模型中，组合特征的参数一共有${n(n-1)\over{2} }$个，且任意两个参数都是独立的。但是因为每个参数$w<em>{ij}$的训练都需要大量的$x_i$和$x_j$都非零的样本，在数据稀疏性普遍存在的实际场景中，这样的训练是非常困难的，参数$w</em>{ij}$的不准确将严重影响模型的性能。</p>
-<p>那么，我们如何解决二次项参数的训练问题呢？我们借助矩阵分解的思想，将所有二次项参数$w<em>{ij}$组成一个对称矩阵$W$，这个矩阵可以分解为$W=V^TV$，$V$的第$j$列便是第$j$维特征的隐向量，即$w</em>{ij}=\langle{v_i,v_j}\rangle$，这就是FM模型的核心思想。因此二阶FM模型的方程可以表述为：</p>
+y(x)=w_0+\sum^{n}_{i=1}{w_ix_i}+\sum^{n}_{i=1}\sum^{n}_{j=i+1}{w_{ij}x_ix_j}</script><p>其中，$n$代表样本的特征数量，$x_i$是第$i$个特征的值，$w_0$、$w_i$、$w_{ij}$是模型参数。</p>
+<p>在多项式模型中，组合特征的参数一共有${n(n-1)\over{2} }$个，且任意两个参数都是独立的。但是因为每个参数$w_{ij}$的训练都需要大量的$x_i$和$x_j$都非零的样本，在数据稀疏性普遍存在的实际场景中，这样的训练是非常困难的，参数$w_{ij}$的不准确将严重影响模型的性能。</p>
+<p>那么，我们如何解决二次项参数的训练问题呢？我们借助矩阵分解的思想，将所有二次项参数$w_{ij}$组成一个对称矩阵$W$，这个矩阵可以分解为$W=V^TV$，$V$的第$j$列便是第$j$维特征的隐向量，即$w_{ij}=\langle{v_i,v_j}\rangle$，这就是FM模型的核心思想。因此二阶FM模型的方程可以表述为：</p>
 <script type="math/tex; mode=display">
 y(x)=w_0+\sum^{n}_{i=1}{w_ix_i}+\sum^{n}_{i=1}\sum^{n}_{j=i+1}{\langle{v_i,v_j}\rangle}{x_ix_j}</script><p>其中，$v_i$是第$i$维特征的隐向量，${\langle{\cdot,\cdot}\rangle}$表示向量点积。</p>
-<h2 id="FFM模型"><a href="#FFM模型" class="headerlink" title="FFM模型"></a>FFM模型</h2><p>FFM模型（Field-aware Factorization Machine）来源于Yu-Chin Juan与其比赛队员，他们借鉴了Michael Jahrer的<a target="_blank" rel="noopener" href="https://kaggle2.blob.core.windows.net/competitions/kddcup2012/2748/media/Opera.pdf">论文</a>中的field概念，提出了FM的升级版模型。FFM把相同性质的特征归于同一个Field。以上面的广告点击案例为例，“Day=26/11/15”、“Day=1/7/14”、“Day=19/2/15” 这三个特征都是代表日期的，可以放到同一个 Field 中。同理，550个商品类别特征也可以放到一个Field中。即同一个类别特征经过One-Hot编码生成的数值特征都可以放到同一个Field中。在FFM中，每一维特征$x<em>i$，针对其它特征的每一个Field记为$f_j$，都会学习一个隐向量$v</em>{i,f_j}$。因此，隐向量不仅与特征相关，也与Field相关。也就是说，“Day=26/11/15” 这个特征与 “Country” 特征和 “Ad_type” 特征进行关联的时候使用不同的隐向量，这与 “Country” 和 “Ad_type” 的内在差异相符，也是 FFM 中 “field-aware” 的由来。</p>
+<h2 id="FFM模型"><a href="#FFM模型" class="headerlink" title="FFM模型"></a>FFM模型</h2><p>FFM模型（Field-aware Factorization Machine）来源于Yu-Chin Juan与其比赛队员，他们借鉴了Michael Jahrer的<a target="_blank" rel="noopener" href="https://kaggle2.blob.core.windows.net/competitions/kddcup2012/2748/media/Opera.pdf">论文</a>中的field概念，提出了FM的升级版模型。FFM把相同性质的特征归于同一个Field。以上面的广告点击案例为例，“Day=26/11/15”、“Day=1/7/14”、“Day=19/2/15” 这三个特征都是代表日期的，可以放到同一个 Field 中。同理，550个商品类别特征也可以放到一个Field中。即同一个类别特征经过One-Hot编码生成的数值特征都可以放到同一个Field中。在FFM中，每一维特征$x_i$，针对其它特征的每一个Field记为$f_j$，都会学习一个隐向量$v_{i,f_j}$。因此，隐向量不仅与特征相关，也与Field相关。也就是说，“Day=26/11/15” 这个特征与 “Country” 特征和 “Ad_type” 特征进行关联的时候使用不同的隐向量，这与 “Country” 和 “Ad_type” 的内在差异相符，也是 FFM 中 “field-aware” 的由来。</p>
 <p>假设样本的 nn 个特征属于 ff 个 field，那么 FFM 的二次项有 $nf$个隐向量。而在 FM 模型中，每一维特征的隐向量只有一个。<strong>FM 可以看作 FFM 的特例</strong>，是把所有特征都归属到一个 field 时的 FFM 模型。根据 FFM 的 field 敏感特性，可以导出其模型方程。如下：</p>
 <script type="math/tex; mode=display">
 y(x)=w_0+\sum^{n}_{i=1}{w_ix_i}+\sum^{n}_{i=1}\sum^{n}_{j=i+1}{\langle{v_{i,f_j},v_{j,f_i}}\rangle}{x_ix_j}</script><h2 id="DFM模型"><a href="#DFM模型" class="headerlink" title="DFM模型"></a>DFM模型</h2><p>FM模型和FFM模型都在特征组合方面进行了探索，FM通过对每一维特征的隐变量内积来提取特征组合，虽然也能取得非常好的结果，但是由于计算复杂度的原因，往往只能局限在二阶特征组合进行建模。如果要使用FFM模型，所有的特征必须要转换成”field_id:feat_id:value”的格式，field_id表示特征所属field的编号，feat_id代表特征编号，value是特征的值。</p>
