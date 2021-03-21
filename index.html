@@ -1,306 +1,944 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
+
+
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+    <meta charset="utf-8">
+    <meta name="keywords" content="深自缄默，如云漂泊">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+    <title>深自缄默，如云漂泊</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
 
-  
-<meta name="generator" content="Hexo 5.4.0"></head>
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="深自缄默，如云漂泊" type="application/atom+xml">
+</head>
+
+
+
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">深自缄默，如云漂泊</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
       
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>Contact</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">深自缄默，如云漂泊</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
         
-          <a class="main-nav-link" href="/">Home</a>
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
         
-      </nav>
-      <nav id="sub-nav">
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
 </header>
 
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-DeepCrossing理论与实践" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/21/DeepCrossing%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/" class="article-date">
-  <time class="dt-published" datetime="2021-03-21T03:40:55.000Z" itemprop="datePublished">2021-03-21</time>
-</a>
     
-  </div>
-  <div class="article-inner">
+<style>
+    .carousel-control {
+        width: 45px;
+        height: 45px;
+        line-height: 55px;
+        border-radius: 45px;
+        background: transparent;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    #prev-cover {
+        position: absolute;
+        top: 48%;
+        left: 8px;
+    }
+
+    #next-cover {
+        position: absolute;
+        top: 48%;
+        right: 8px;;
+    }
+
+    #prev-cover i {
+        margin-right: 3px;
+    }
+
+    #next-cover i {
+        margin-left: 3px;
+    }
+
+    .carousel-control:hover {
+        background-color: rgba(0, 0, 0, .4);
+    }
+
+    .carousel-control i {
+        color: #fff;
+        font-size: 2.4rem;
+    }
+</style>
+
+
+
+<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
     
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/21/DeepCrossing%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/">DeepCrossing理论与实践</a>
-    </h1>
-  
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="论文背景"><a href="#论文背景" class="headerlink" title="论文背景"></a>论文背景</h1><p>DeepCrossing是2016年由微软提出，旨在特征工程中减少人力特征组合的时间开销，通过模型自动学习特征的组合方式，解决特征组合的难题。是第一个企业以正式论文的形式分享推荐系统技术细节的模型。</p>
-<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><img src="https://raw.githubusercontent.com/UPTOLIMIT/PicBed/master//img/image-20210315215320120.png" alt="image-20210315215320120" style="zoom: 67%;" />
+    <div class="carousel-item red white-text bg-cover about-cover">
+        <div class="container">
+            <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                    subtitle
+                
+            </div>
 
-<p>模型的输入是一系列独立的特征，输出是用户的点击率预测值。模型一共分为4层，分别是Embedding层，Stacking层，Multiple Residual Units层，Scoring层。</p>
-<h2 id="Embedding层"><a href="#Embedding层" class="headerlink" title="Embedding层"></a>Embedding层</h2><p>Embedding这个概念最初来源于Manifold Hypothesis（<a target="_blank" rel="noopener" href="https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/">流形假设</a>）。流形假设是指<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/38002635">“自然的原始数据是低维的流形嵌入于(embedded in)原始数据所在的高维空间”</a>，而深度学习的任务就是把高维原始数据映射到低维流形，使得原始数据变得可分，而这个映射就叫做embedding（嵌入），比如word embedding（词嵌入）就是把单词组成的句子映射到一个表征向量。久而久之，把低维流形的表征向量叫做Embedding成为一种习惯（其实是一种误用）。在本文中，Embedding 层的作用就是将从原始独立特征中提取出来的高维稀疏特征向量转换成低维稠密的Embedding向量。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_embedding_layers</span>(<span class="params">feature_columns, input_layers_dict, is_linear</span>):</span></span><br><span class="line">    <span class="comment"># 定义一个embedding层对应的字典</span></span><br><span class="line">    embedding_layers_dict = <span class="built_in">dict</span>()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 将特征中的sparse特征筛选出来</span></span><br><span class="line">    sparse_feature_columns = <span class="built_in">list</span>(<span class="built_in">filter</span>(<span class="keyword">lambda</span> x: <span class="built_in">isinstance</span>(x, SparseFeat), feature_columns)) <span class="keyword">if</span> feature_columns <span class="keyword">else</span> []</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 如果是用于线性部分的embedding层，其维度为1，否则维度就是自己定义的embedding维度</span></span><br><span class="line">    <span class="keyword">if</span> is_linear:</span><br><span class="line">        <span class="keyword">for</span> fc <span class="keyword">in</span> sparse_feature_columns:</span><br><span class="line">            embedding_layers_dict[fc.name] = Embedding(fc.vocabulary_size + <span class="number">1</span>, <span class="number">1</span>, name=<span class="string">&#x27;1d_emb_&#x27;</span> + fc.name)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> fc <span class="keyword">in</span> sparse_feature_columns:</span><br><span class="line">            embedding_layers_dict[fc.name] = Embedding(fc.vocabulary_size + <span class="number">1</span>, fc.embedding_dim, name=<span class="string">&#x27;kd_emb_&#x27;</span> + fc.name)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> embedding_layers_dict</span><br></pre></td></tr></table></figure>
-
-<h2 id="Stacking层"><a href="#Stacking层" class="headerlink" title="Stacking层"></a>Stacking层</h2><p>得到了所有特征的Embedding表示之后，Stacking层接收Embedding层的输入并且把这些特征聚合起来，形成一个向量</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将所有的sparse特征embedding拼接</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">concat_embedding_list</span>(<span class="params">feature_columns, input_layer_dict, embedding_layer_dict, flatten=<span class="literal">False</span></span>):</span></span><br><span class="line">    <span class="comment"># 将sparse特征筛选出来</span></span><br><span class="line">    sparse_feature_columns = <span class="built_in">list</span>(<span class="built_in">filter</span>(<span class="keyword">lambda</span> x: <span class="built_in">isinstance</span>(x, SparseFeat), feature_columns))</span><br><span class="line"></span><br><span class="line">    embedding_list = []</span><br><span class="line">    <span class="keyword">for</span> fc <span class="keyword">in</span> sparse_feature_columns:</span><br><span class="line">        _input = input_layer_dict[fc.name] <span class="comment"># 获取输入层 </span></span><br><span class="line">        _embed = embedding_layer_dict[fc.name] <span class="comment"># B x 1 x dim  获取对应的embedding层</span></span><br><span class="line">        embed = _embed(_input) <span class="comment"># B x dim  将input层输入到embedding层中</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 是否需要flatten, 如果embedding列表最终是直接输入到Dense层中，需要进行Flatten，否则不需要</span></span><br><span class="line">        <span class="keyword">if</span> flatten:</span><br><span class="line">            embed = Flatten()(embed)</span><br><span class="line">        </span><br><span class="line">        embedding_list.append(embed)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> embedding_list </span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Multiple-Residual-Units层"><a href="#Multiple-Residual-Units层" class="headerlink" title="Multiple Residual Units层"></a>Multiple Residual Units层</h2><p><img src="F:%5CMyBlog%5Csource%5C_posts%5Cimage-20210316193133492.png" alt="image-20210316193133492"></p>
-<p>DeepCrossing中的Crossing就是通过多个残差单元来实现的，残差单元的结构如上图所示。与ResNet不同的是，它不包含卷积操作，也是第一次在图像识别之外应用残差单元。<br>$$<br>X^O=F(X^I,{W_0,W_1},{b_0,b_1})+X^I<br>$$<br>将$X^I$移动到左侧,可以看出$F$函数拟合的是输入和输出之间的残差。对输入进行全连接变换之后，经过<code>relu</code>激活函数送入第二个全连接层，将输出结果与原始输入进行<code>element-wise add</code>操作，再经过<code>relu</code>激活输出，实验表明，残差结构能更敏感的捕获输入输出之间的信息差。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># DNN残差块的定义</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ResidualBlock</span>(<span class="params">Layer</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, units</span>):</span> <span class="comment"># units表示的是DNN隐藏层神经元数量</span></span><br><span class="line">        <span class="built_in">super</span>(ResidualBlock, self).__init__()</span><br><span class="line">        self.units = units</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">build</span>(<span class="params">self, input_shape</span>):</span></span><br><span class="line">        out_dim = input_shape[-<span class="number">1</span>]</span><br><span class="line">        self.dnn1 = Dense(self.units, activation=<span class="string">&#x27;relu&#x27;</span>)</span><br><span class="line">        self.dnn2 = Dense(out_dim, activation=<span class="string">&#x27;relu&#x27;</span>) <span class="comment"># 保证输入的维度和输出的维度一致才能进行残差连接</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">call</span>(<span class="params">self, inputs</span>):</span></span><br><span class="line">        x = inputs</span><br><span class="line">        x = self.dnn1(x)</span><br><span class="line">        x = self.dnn2(x)</span><br><span class="line">        x = Activation(<span class="string">&#x27;relu&#x27;</span>)(x + inputs) <span class="comment"># 残差操作</span></span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="Scoring层"><a href="#Scoring层" class="headerlink" title="Scoring层"></a>Scoring层</h2><p>Scoring层作为输出层，输出广告预测点击率，是为了拟合优化目标而存在，对于二分类问题，往往使用逻辑回归，模型通过叠加多个残差块加深网络的深度，最后将结果转换为一个概率值输出。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># block_nums表示DNN残差块的数量，通过叠加残差块的数量可以加深网络深度</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_dnn_logits</span>(<span class="params">dnn_inputs, block_nums=<span class="number">3</span></span>):</span></span><br><span class="line">    dnn_out = dnn_inputs</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(block_nums):</span><br><span class="line">        dnn_out = ResidualBlock(<span class="number">64</span>)(dnn_out)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 这里使用sigmoid激活函数，将dnn的输出转化成logits</span></span><br><span class="line">        dnn_logits = Dense(<span class="number">1</span>, activation=<span class="string">&#x27;sigmoid&#x27;</span>)(dnn_out)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dnn_logits</span><br></pre></td></tr></table></figure>
-
-<h2 id="代码解读"><a href="#代码解读" class="headerlink" title="代码解读"></a>代码解读</h2><p>从<code>main</code>函数开始，按照代码执行顺序，阅读代码。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">data = pd.read_csv(<span class="string">&#x27;./data/criteo_sample.txt&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 划分dense和sparse特征，即密集特征和稀疏特征，观察原数据集可以发现是按列分好的</span></span><br><span class="line">columns = data.columns.values</span><br><span class="line">dense_features = [feat <span class="keyword">for</span> feat <span class="keyword">in</span> columns <span class="keyword">if</span> <span class="string">&#x27;I&#x27;</span> <span class="keyword">in</span> feat]</span><br><span class="line">sparse_features = [feat <span class="keyword">for</span> feat <span class="keyword">in</span> columns <span class="keyword">if</span> <span class="string">&#x27;C&#x27;</span> <span class="keyword">in</span> feat]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 简单的数据预处理</span></span><br><span class="line">   train_data = data_process(data, dense_features, sparse_features)</span><br><span class="line">   train_data[<span class="string">&#x27;label&#x27;</span>] = data[<span class="string">&#x27;label&#x27;</span>]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数据预处理函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">data_process</span>(<span class="params">data_df, dense_features, sparse_features</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    简单处理特征，包括填充缺失值，数值处理，类别编码</span></span><br><span class="line"><span class="string">    param data_df: DataFrame格式的数据</span></span><br><span class="line"><span class="string">    param dense_features: 数值特征名称列表</span></span><br><span class="line"><span class="string">    param sparse_features: 类别特征名称列表</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    data_df[dense_features] = data_df[dense_features].fillna(<span class="number">0.0</span>)</span><br><span class="line">    <span class="comment"># 使用log函数对数据进行平滑处理</span></span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> dense_features:</span><br><span class="line">        data_df[f] = data_df[f].apply(<span class="keyword">lambda</span> x: np.log(x+<span class="number">1</span>) <span class="keyword">if</span> x &gt; -<span class="number">1</span> <span class="keyword">else</span> -<span class="number">1</span>)</span><br><span class="line">    <span class="comment"># 将缺失值填充为-1  </span></span><br><span class="line">    data_df[sparse_features] = data_df[sparse_features].fillna(<span class="string">&quot;-1&quot;</span>)</span><br><span class="line">    <span class="comment"># 将类别型数据one-hot编码</span></span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> sparse_features:</span><br><span class="line">        lbe = LabelEncoder()</span><br><span class="line">        data_df[f] = lbe.fit_transform(data_df[f])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> data_df[dense_features + sparse_features]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将特征做标记</span></span><br><span class="line"></span><br><span class="line">dnn_feature_columns = [SparseFeat(feat, vocabulary_size=data[feat].nunique(),embedding_dim=<span class="number">4</span>)</span><br><span class="line">                            <span class="keyword">for</span> feat <span class="keyword">in</span> sparse_features] + [DenseFeat(feat, <span class="number">1</span>,)</span><br><span class="line">                            <span class="keyword">for</span> feat <span class="keyword">in</span> dense_features]</span><br></pre></td></tr></table></figure>
-
-<p>这里用到了python的一个工厂函数<code>namedtuple()</code>可以译为<code>具名元组</code>，可以理解为元组的增强版本，为元组中的每一个元素赋予了含义，从而增强代码可读性。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SparseFeat = namedtuple(<span class="string">&#x27;SparseFeat&#x27;</span>, [<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;vocabulary_size&#x27;</span>, <span class="string">&#x27;embedding_dim&#x27;</span>])</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 构建DeepCrossing模型</span></span><br><span class="line">    history = DeepCrossing(dnn_feature_columns)</span><br></pre></td></tr></table></figure>
-
-<p>DeepCrossing模型代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">DeepCrossing</span>(<span class="params">dnn_feature_columns</span>):</span></span><br><span class="line">    <span class="comment"># 构建输入层，即所有特征对应的Input()层，这里使用字典的形式返回，方便后续构建模型</span></span><br><span class="line">    dense_input_dict, sparse_input_dict = build_input_layers(dnn_feature_columns)</span><br><span class="line">    <span class="comment"># 构建模型的输入层，模型的输入层不能是字典的形式，应该将字典的形式转换成列表的形式</span></span><br><span class="line">    <span class="comment"># 注意：这里实际的输入与Input()层的对应，是通过模型输入时候的字典数据的key与对应name的Input层</span></span><br><span class="line">    input_layers = <span class="built_in">list</span>(dense_input_dict.values()) + <span class="built_in">list</span>(sparse_input_dict.values())</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 构建维度为k的embedding层，这里使用字典的形式返回，方便后面搭建模型</span></span><br><span class="line">    embedding_layer_dict = build_embedding_layers(dnn_feature_columns, sparse_input_dict, is_linear=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#将所有的dense特征拼接到一起，B为Batchsize</span></span><br><span class="line">    dense_dnn_list = <span class="built_in">list</span>(dense_input_dict.values())</span><br><span class="line">    dense_dnn_inputs = Concatenate(axis=<span class="number">1</span>)(dense_dnn_list) <span class="comment"># B x n (n表示数值特征的数量)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 因为需要将其与dense特征拼接到一起所以需要Flatten，不进行Flatten的Embedding层输出的维度为：Bx1xdim</span></span><br><span class="line">    sparse_dnn_list = concat_embedding_list(dnn_feature_columns, sparse_input_dict, embedding_layer_dict, flatten=<span class="literal">True</span>) </span><br><span class="line"></span><br><span class="line">    sparse_dnn_inputs = Concatenate(axis=<span class="number">1</span>)(sparse_dnn_list) <span class="comment"># B x m*dim (n表示类别特征的数量，dim表示embedding的维度)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 将dense特征和Sparse特征拼接到一起</span></span><br><span class="line">    dnn_inputs = Concatenate(axis=<span class="number">1</span>)([dense_dnn_inputs, sparse_dnn_inputs]) <span class="comment"># B x (n + m*dim)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 输入到dnn中，需要提前定义需要几个残差块</span></span><br><span class="line">    output_layer = get_dnn_logits(dnn_inputs, block_nums=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">    model = Model(input_layers, output_layer)</span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>DeepCrossing的结构比较简单清晰，没有引入特殊的模型结构，只是常规的Embedding+多层神经网络。但是在DeepCrossing中没有任何人工特征工程的参与，只需要简单的特征处理，原始特征经过Embedding层输入神经网络层，自主交叉和学习，通过调整神经网络的深度进行特征之间的深度交叉，也是DeepCrossing名称的由来（大悟）。</p>
-<p>最后附上论文<a href="https://link.zhihu.com/?target=http://www.kdd.org/kdd2016/papers/files/adf0975-shanA.pdf">链接</a></p>
-
-      
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [ 
+                            
+                                "从来没有真正的绝境, 只有心灵的迷途",
+                            
+                                "Never really desperate, only the lost of the soul",
+                            
+                        ],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/21/DeepCrossing%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/" data-id="ckmioeusq0000tsv97dva5dm3" data-title="DeepCrossing理论与实践" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-DNN-%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/" rel="tag">推荐系统 DNN 特征工程</a></li></ul>
+</div>
 
-    </footer>
-  </div>
-  
-</article>
+
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+</script>
 
 
 
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/20/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-03-20T08:25:05.665Z" itemprop="datePublished">2021-03-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/20/hello-world/">Hello World</a>
-    </h1>
-  
+            <div class="cover-btns">
+                <a href="#indexCard" class="waves-effect waves-light btn">
+                    <i class="fa fa-angle-double-down"></i>Start
+                </a>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                
+                    <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light btn" target="_blank">
+                        <i class="fab fa-github-alt"></i>Github
+                    </a>
+                
+            </div>
+            <div class="cover-social-link">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
-      
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/20/hello-world/" data-id="ckmioeusu0001tsv99962fyqn" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
+    
+</div>
 
+<script>
+    $(function () {
+        let coverSlider = $('.carousel');
 
-  
+        //用户触摸轮播自动 restartPlay 是否生效
+        let initUserPressedOrDraggedActive = false
 
+        //用户触摸轮播自动 restartPlay
+        function initUserPressedOrDragged(instance) {
+            setInterval(() => {
+                if (instance.pressed || instance.dragged) {
+                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
+                    restartPlay()
+                }
+            }, 1000)
+        }
 
-</section>
+        coverSlider.carousel({
+            duration: Number('120'),
+            fullWidth: true,
+            indicators: 'true' === 'true',
+            onCycleTo() {
+                if (!initUserPressedOrDraggedActive) {
+                    // console.log('initUserPressedOrDraggedActive')
+                    initUserPressedOrDragged(this)
+                    initUserPressedOrDraggedActive = true
+                }
+            },
+        })
+
+        let carouselIntervalId;
         
-          <aside id="sidebar">
-  
+        // Loop to call the next cover article picture.
+        let autoCarousel = function () {
+            carouselIntervalId = setInterval(function () {
+                coverSlider.carousel('next');
+            }, 5000);
+        };
+        autoCarousel();
+        
+
+        function restartPlay() {
+            
+            clearInterval(carouselIntervalId);
+            autoCarousel();
+            
+        };
+
+        
+        // prev and next cover post.
+        $('#prev-cover').click(function () {
+            coverSlider.carousel('prev');
+            restartPlay();
+        });
+        $('#next-cover').click(function () {
+            coverSlider.carousel('next');
+            restartPlay();
+        });
+        
+    });
+</script>
+
+
+
+<main class="content">
+
+    
+    <div id="indexCard" class="index-card">
+        <div class="container ">
+            <div class="card">
+                <div class="card-content">
+                    
+                        <div class="dream">
+    
+    <div class="title center-align">
+        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;我的梦想
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
+            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
+        </div>
+    </div>
+</div>
+
+                    
+
+                    
+
+                    
+
+                    
+                    <div id="recommend-sections" class="recommend">
+                        
+
+
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
     
 
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-DNN-%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/" rel="tag">推荐系统 DNN 特征工程</a></li></ul>
-    </div>
-  </div>
+
+    <!-- 所有文章卡片 -->
+    <article id="articles" class="container articles">
+        <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/03/21/deepcrossing-li-lun-yu-shi-jian/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="DeepCrossing理论与实践">
+                            
+                            <span class="card-title">DeepCrossing理论与实践</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+论文背景DeepCrossing是2016年由微软提出，旨在特征工程中减少人力特征组合的时间开销，通过模型自动学习特征的组合方式，解决特征组合的难题。是第一个企业以正式论文的形式分享推荐系统技术细节的模型。
+模型结构
+
+模型的输入是一系列
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-21
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                UPTOLIMIT
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-DNN-%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/">
+                            <span class="chip bg-color">推荐系统 DNN 特征工程</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/03/20/hello-world/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                            
+                            <span class="card-title">Hello World</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-20
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                UPTOLIMIT
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
+
+</main>
 
 
-  
+
+
+    <footer class="page-footer bg-color">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F-DNN-%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/" style="font-size: 10px;">推荐系统 DNN 特征工程</a>
-    </div>
-  </div>
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
 
-  
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li></ul>
-    </div>
-  </div>
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
 
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
 
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/03/21/DeepCrossing%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/">DeepCrossing理论与实践</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/20/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
     </div>
-  </div>
+</div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2021 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">UPTOLIMIT</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
     </div>
-  </div>
 </footer>
 
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
+    
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+    
 
+    <!--腾讯兔小巢-->
+    
+    
 
+    
 
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    
 
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
 
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>
