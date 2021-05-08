@@ -31,9 +31,9 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="/custom_css_source.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="深自缄默，如云漂泊" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="深自缄默，如云漂泊" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -472,14 +472,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-07
+                    2021-05-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    956
+                    971
                 </div>
                 
 
@@ -569,9 +569,9 @@ int main(){
     char temp[100][100] = {0};
     int ret = 0, k = 0;
     fp = fopen("./output", "r+");
-    while(( ret = fscanf(fp, "%c", temp[k++])) != EOF ){
+    while(( ret = fscanf(fp, "%[^\n]s", temp[k++])) != EOF ){
         printf("%s ret = %d\n", temp[k-1], ret);
-        getchar();
+        fgetc();//在文件流中使用fgetc()来读入换行符
     }
     fclose(fp);
     for(int i=0; i < k; i++){
@@ -1204,7 +1204,7 @@ int vsnprintf(char *str, size_t size, const char *format, va_list ap);
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.9k</span>&nbsp;字
+                class="white-color">10.1k</span>&nbsp;字
             
             
             
