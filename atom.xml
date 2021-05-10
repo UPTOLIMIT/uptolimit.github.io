@@ -6,7 +6,7 @@
   <link href="https://uptolimit.github.io/atom.xml" rel="self"/>
   
   <link href="https://uptolimit.github.io/"/>
-  <updated>2021-05-09T03:19:49.813Z</updated>
+  <updated>2021-05-10T09:21:18.894Z</updated>
   <id>https://uptolimit.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL基础基础知识</title>
+    <link href="https://uptolimit.github.io/2021/05/10/mysql-ji-chu-ji-chu-zhi-shi/"/>
+    <id>https://uptolimit.github.io/2021/05/10/mysql-ji-chu-ji-chu-zhi-shi/</id>
+    <published>2021-05-10T09:05:59.000Z</published>
+    <updated>2021-05-10T09:21:18.894Z</updated>
+    
+    
+    
+    
+    <category term="重学数据库" scheme="https://uptolimit.github.io/categories/%E9%87%8D%E5%AD%A6%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="SQL" scheme="https://uptolimit.github.io/tags/SQL/"/>
+    
+    <category term="MySQL" scheme="https://uptolimit.github.io/tags/MySQL/"/>
+    
+    <category term="数据库" scheme="https://uptolimit.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>程序流程控制方法</title>
