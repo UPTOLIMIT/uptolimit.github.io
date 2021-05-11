@@ -6,7 +6,7 @@
   <link href="https://uptolimit.github.io/atom.xml" rel="self"/>
   
   <link href="https://uptolimit.github.io/"/>
-  <updated>2021-05-10T16:28:36.021Z</updated>
+  <updated>2021-05-11T12:05:39.370Z</updated>
   <id>https://uptolimit.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python基础</title>
+    <link href="https://uptolimit.github.io/2021/05/11/python-ji-chu/"/>
+    <id>https://uptolimit.github.io/2021/05/11/python-ji-chu/</id>
+    <published>2021-05-11T06:53:53.000Z</published>
+    <updated>2021-05-11T12:05:39.370Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;变量与字符串&quot;&gt;&lt;a href=&quot;#变量与字符串&quot; class=&quot;headerlink&quot; title=&quot;变量与字符串&quot;&gt;&lt;/a&gt;变量与字符串&lt;/h2&gt;&lt;pre class=&quot; language-lang-python&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="重学Python语言" scheme="https://uptolimit.github.io/categories/%E9%87%8D%E5%AD%A6Python%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="编程语言" scheme="https://uptolimit.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="Python" scheme="https://uptolimit.github.io/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL基础基础知识</title>
