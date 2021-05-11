@@ -6,7 +6,7 @@
   <link href="https://uptolimit.github.io/atom.xml" rel="self"/>
   
   <link href="https://uptolimit.github.io/"/>
-  <updated>2021-05-11T12:09:20.366Z</updated>
+  <updated>2021-05-11T16:16:42.074Z</updated>
   <id>https://uptolimit.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>快速搭建SUMO仿真实例</title>
+    <link href="https://uptolimit.github.io/2021/05/11/kuai-su-da-jian-sumo-fang-zhen-shi-li/"/>
+    <id>https://uptolimit.github.io/2021/05/11/kuai-su-da-jian-sumo-fang-zhen-shi-li/</id>
+    <published>2021-05-11T14:59:30.000Z</published>
+    <updated>2021-05-11T16:16:42.074Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装SUMO&quot;&gt;&lt;a href=&quot;#安装SUMO&quot; class=&quot;headerlink&quot; title=&quot;安装SUMO&quot;&gt;&lt;/a&gt;安装SUMO&lt;/h2&gt;&lt;p&gt;首先在本地PC上安装好SUMO仿真软件，下载&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="SUMO" scheme="https://uptolimit.github.io/categories/SUMO/"/>
+    
+    
+    <category term="车联网" scheme="https://uptolimit.github.io/tags/%E8%BD%A6%E8%81%94%E7%BD%91/"/>
+    
+    <category term="仿真" scheme="https://uptolimit.github.io/tags/%E4%BB%BF%E7%9C%9F/"/>
+    
+    <category term="SUMO" scheme="https://uptolimit.github.io/tags/SUMO/"/>
+    
+  </entry>
   
   <entry>
     <title>Python基础知识</title>

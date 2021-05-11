@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>快速搭建SUMO仿真实例</title>
+      <link href="2021/05/11/kuai-su-da-jian-sumo-fang-zhen-shi-li/"/>
+      <url>2021/05/11/kuai-su-da-jian-sumo-fang-zhen-shi-li/</url>
+      
+        <content type="html"><![CDATA[<h2 id="安装SUMO"><a href="#安装SUMO" class="headerlink" title="安装SUMO"></a>安装SUMO</h2><p>首先在本地PC上安装好SUMO仿真软件，下载<a href="https://www.eclipse.org/sumo/">地址</a>，本文使用的版本是<strong>SUMO 1.9.1 FOR WINDOWS 64BITS</strong>。安装好后，在安装根目录下创建一个新的文件夹命名为map。</p><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210511233435589.png" alt="image-20210511233435589"></p><h2 id="安装Python环境"><a href="#安装Python环境" class="headerlink" title="安装Python环境"></a>安装Python环境</h2><p>生成配置文件的过程需要调用Python执行Python脚本，因此需要支持Python环境。</p><h2 id="获取目标区域地图"><a href="#获取目标区域地图" class="headerlink" title="获取目标区域地图"></a>获取目标区域地图</h2><p>从<a href="https://www.openstreetmap.org/">openstreetmap</a>获取需要的地图文件，并做相应处理</p><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210511231526505.png" alt="image-20210511231526505"></p><p>点击==导出==，左侧会出现手动选择工具栏和许可协议，再次点击许可协议下方的==导出==按钮，会获取到map.osm文件，文件中不仅包含路网信息也包含大量的别的模块例如建筑和河流，这些模块可以用 ==polyconvert== 工具添加到 sumo-gui 配置文件中。在C盘生成的Sumo文件夹下创建新的map文件夹，将map.osm文件放进去。</p><h2 id="配置SUMO仿真环境"><a href="#配置SUMO仿真环境" class="headerlink" title="配置SUMO仿真环境"></a>配置SUMO仿真环境</h2><ul><li><p>从SUMO安装目录中打开Sumo\doc\userdoc\Networks\Import\OpenStreetMap.html文件</p><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210511233353767.png" alt="image-20210511233353767"></p></li><li><p>点击左侧标记模块<code>Importing additional Polygons (Buildings, Water, etc.)</code>，复制如下代码块</p><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210511233906065.png" alt="image-20210511233906065"></p></li><li><p>打开本地文本编辑器，本文中使用的是vscode，新建文件，粘贴入复制的代码，将文件保存到刚才新建的==map文件夹==中，命名为==typemap==，文件类型为==xml==。</p><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210511234416504.png" alt="image-20210511234416504"></p></li><li><p>在map目录下打开cmd命令行程序，输出如下命令:</p><p><code>netconvert --osm-files map.osm -o map.net.xml</code></p><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210511234752678.png" alt="image-20210511234752678"></p><p><code>polyconvert --net-file map.net.xml --osm-files map.osm --type-file typemap.xml -o map.poly.xml</code></p><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210511234942710.png" alt="image-20210511234942710"></p><p>这两步完成后，我们获得<strong>map.net</strong>和<strong>map.poly</strong>两个文件</p><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210511235134988.png" alt="image-20210511235134988"></p></li><li><p>在当前目录下使用命令行调用python执行sumo的randomTrips.py文件，带参数选项的命令如下：</p><p><code>python "C:\Program Files (x86)\Eclipse\Sumo\tools\randomTrips.py" -n map.net.xml -r map.rou.xml -e 100 -l</code></p><ul><li><code>-n</code>表示输入的类型是<code>net</code></li><li><code>-r</code>表示输入的类型是<code>route</code></li><li><code>-e 100 -l</code>是随机工具配置</li></ul><p>执行成功后，我们获得==map.net.xml==与==map.rou.xml==两个文件。</p><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210511235621154.png" alt="image-20210511235621154"></p></li><li><p>从sumo的example文件夹中拷贝一份test.sumocfg文件，修改其中的input和output部分，然后保存为map.sumocfg文件，存到map目录下。我选用的是<code>C:\Program Files (x86)\Eclipse\Sumo\tools\contributed\saga\example\most.test.sumocfg</code>。</p><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210512000617458.png" alt="image-20210512000617458"></p></li></ul><h2 id="运行map仿真例子"><a href="#运行map仿真例子" class="headerlink" title="运行map仿真例子"></a>运行map仿真例子</h2><ul><li><p>在map目录下打开cmd，运行如下命令：</p><p><code>sumo-gui map.sumocfg</code></p><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210512001020488.png" alt="image-20210512001020488"></p></li><li><p>在打开的sumoGUI程序中，根据个人需求设置延迟时间和车流，本文设置的是200，车流为原始数据的4倍。</p><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210512001326078.png" alt="image-20210512001326078"></p></li><li><p>点击运行，一个简单的sumo仿真实例就此搭建完毕</p><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210512001614501.png" alt="image-20210512001614501"></p><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210512001416640.png" alt="image-20210512001416640"></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> SUMO </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 车联网 </tag>
+            
+            <tag> 仿真 </tag>
+            
+            <tag> SUMO </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Python基础知识</title>
       <link href="2021/05/11/python-ji-chu-zhi-shi/"/>
       <url>2021/05/11/python-ji-chu-zhi-shi/</url>
