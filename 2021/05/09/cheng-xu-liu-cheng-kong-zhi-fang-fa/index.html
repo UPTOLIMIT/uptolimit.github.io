@@ -661,9 +661,11 @@ int main(){
 #define unlikely(x) __builtin_expect(!!(x), 0) //unlikely 代表x不经常成立
 </code></pre>
 <p><em>Tips</em>  由于CPU是以流水线的方式执行指令，CPU因此最不擅长处理分支结构，因为要等待判定条件确认才能知晓该执行哪一条语句。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210513210411482.png" alt="image-20210513210411482"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210513210411482.png" alt="image-20210513210411482" style="zoom:80%;"></p>
 <p>为了应对这样的问题，CPU引入了分支预测的功能，CPU依据以往的执行情况，提前加载可能执行的指令，但是如果CPU预测出错，那么即将执行的指令都会出错，对此CPU提供了一种容错机制，就是如果在执行过程中CPU发现预测出错，则会将已经计算的指令推倒重来，按照串行的方式重新计算，极大地降低了计算效率。</p>
-<p><strong>结论</strong>：我们在写程序地时候，要尽量减少分支结构地使用。</p>
+<p>类似的宏还有：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210513212940862.png" alt="image-20210513212940862" style="zoom:80%;"></p>
+<p><strong>结论</strong>：我们在写程序地时候，要尽量减少分支结构地使用。 </p>
 
                 
             </div>
