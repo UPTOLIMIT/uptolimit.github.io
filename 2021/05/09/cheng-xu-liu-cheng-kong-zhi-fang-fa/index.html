@@ -31,10 +31,10 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="/custom_css_source.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="青青子衿" type="application/atom+xml">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="青青子衿" type="application/atom+xml">
 
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 
@@ -472,21 +472,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-13
+                    2021-05-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    510
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
 
@@ -568,12 +568,12 @@
 
 int main(){
     int n;
-    while(~scanf("%d", &n)){
+    while(~scanf("%d", &amp;n)){
         if(!n){
             printf("FOOLISH\n");
-        }else if(n < 60){
+        }else if(n &lt; 60){
             printf("FAIL\n");
-        }else if(n < 75){
+        }else if(n &lt; 75){
             printf("MEDIUM\n");
         }else{
             printf("GOOD");
@@ -581,7 +581,7 @@ int main(){
     }
     return 0;
 }
-</code></pre>
+</stdio.h></code></pre>
 <h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a><code>switch</code>语句</h3><p>switch语句中以case为条件入口，程序进入case所对应的代码段，一次执行后续代码，知道遇到break，或者switch结构末尾。</p>
 <pre class=" language-lang-C"><code class="language-lang-C">switch (a) {//a必须能够唯一映射为一个整数
     case 1: 代码块1;
@@ -595,7 +595,7 @@ int main(){
 
 int main(){
     int n;
-    while(~scanf("%d", &n)){
+    while(~scanf("%d", &amp;n)){
         switch(n){
             case 1:
                 printf("one\n");
@@ -612,7 +612,7 @@ int main(){
     }
     return 0;
 }
-</code></pre>
+</stdio.h></code></pre>
 <h3 id="练习题1"><a href="#练习题1" class="headerlink" title="练习题1"></a>练习题1</h3><blockquote>
 <h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>输入一个日期，判断这个日期是否存在。</p>
 <p>1,3,5,7,8,10,121,3,5,7,8,10,12 月有 3131 天；</p>
@@ -627,26 +627,26 @@ int main(){
 <pre class=" language-lang-c"><code class="language-lang-c">#include<stdio.h>
 
 int check(int y, int m, int d){
-    if(m > 12 || m < 1) return 0;
-    if(d > 31 || d < 1) return 0;
+    if(m &gt; 12 || m &lt; 1) return 0;
+    if(d &gt; 31 || d &lt; 1) return 0;
     int month[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    if((y % 4 ==0)&&(y % 100) || y % 400 == 0) month[2] += 1;    
-    return d <= month[m];
+    if((y % 4 ==0)&amp;&amp;(y % 100) || y % 400 == 0) month[2] += 1;    
+    return d &lt;= month[m];
 }
 int main(){
     int y, m, d;
-    scanf("%d%d%d", &y, &m, &d);
+    scanf("%d%d%d", &amp;y, &amp;m, &amp;d);
     printf("%s\n", check(y, m, d) ? "YES" : "NO");
     return 0;
 }
-</code></pre>
+</stdio.h></code></pre>
 <h3 id="练习题2"><a href="#练习题2" class="headerlink" title="练习题2"></a>练习题2</h3><blockquote>
 <p>给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。</p>
 <p>回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。例如，121 是回文，而 123 不是。</p>
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/palindrome-number">https://leetcode-cn.com/problems/palindrome-number</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
 </blockquote>
 <pre class=" language-lang-c"><code class="language-lang-c">bool isPalindrome(int x){
-    if (__builtin_expect(!!(x < 0), 0)) return false;
+    if (__builtin_expect(!!(x &lt; 0), 0)) return false;
     int y = 0, z = x;
     while (x){
         y = y * 10 + x % 10;
@@ -666,7 +666,71 @@ int main(){
 <p>类似的宏还有：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210513212940862.png" alt="image-20210513212940862" style="zoom:80%;"></p>
 <p><strong>结论</strong>：我们在写程序地时候，要尽量减少分支结构地使用。 </p>
-<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2>
+<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><h3 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a><code>while</code>语句</h3><p>每当表达式为真时，代码块就会被执行1次。</p>
+<pre class=" language-lang-c"><code class="language-lang-c">while (表达式){
+    代码块;
+}
+</code></pre>
+<h3 id="do-while语句"><a href="#do-while语句" class="headerlink" title="do...while语句"></a><code>do...while</code>语句</h3><p>每当代码块执行1次，就会判断一次表达式是否为真。</p>
+<pre class=" language-lang-c"><code class="language-lang-c">do {
+    代码块;
+} while (表达式);
+</code></pre>
+<h3 id="练习题-3"><a href="#练习题-3" class="headerlink" title="练习题 3"></a>练习题 3</h3><p>请使用while循环实现程序，输出1-100。</p>
+<pre class=" language-lang-c"><code class="language-lang-c">#include<stdio.h>
+
+int main(){
+    int n = 1;
+    while(n &lt; 101){
+        printf("%d ", n++);
+    }
+    return 0;
+}
+</stdio.h></code></pre>
+<h3 id="For语句"><a href="#For语句" class="headerlink" title="For语句"></a><code>For</code>语句</h3><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210514113315730.png" alt="image-20210514113315730" style="zoom:80%;"></p>
+<h3 id="练习4"><a href="#练习4" class="headerlink" title="练习4"></a>练习4</h3><p>请使用for循环实现程序，输出1-100。</p>
+<pre class=" language-lang-c"><code class="language-lang-c">#include <stdio.h>
+
+int main(){
+    for(int i = 1; i &lt; 101; i++){
+        printf("%d\n",i);
+    }
+    return 0;
+}
+</stdio.h></code></pre>
+<h2 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h2><p>我们在练习OJ的时候，经常会遇到这样的要求，输出的每个值之间用空格分隔，最后一个值后面没有空格，可以通过如下方法实现：</p>
+<pre class=" language-lang-c"><code class="language-lang-c">#include<stdio.h>
+
+int main(){
+    for(int i = 0; i &lt; 5; i++){
+        i &amp;&amp; printf(" ");
+        printf("%d", i);
+    }
+
+    return 0;
+}
+</stdio.h></code></pre>
+<p>我们随机生成n个整数，试着判断这n个整数中，奇数有多少个？</p>
+<pre class=" language-lang-c"><code class="language-lang-c">#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+    srand(time(0));//生成随机种子
+    int n, cnt = 0;
+    scanf("%d", &amp;n);
+    for(int i = 0; i &lt; n; i++){
+        int val = rand() % 100;
+        cnt += ( val &amp; 1 ); 
+        i &amp;&amp; printf(" ");
+        printf("%d", val);
+    }
+    printf("\n");
+    printf("cnt = %d\n", cnt);
+
+    return 0;
+}
+</stdlib.h></stdio.h></code></pre>
+
                 
             </div>
             <hr/>
@@ -1217,7 +1281,7 @@ int main(){
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.6k</span>&nbsp;字
+                class="white-color">14.4k</span>&nbsp;字
             
             
             
