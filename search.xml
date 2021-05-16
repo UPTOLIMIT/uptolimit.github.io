@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>欧几里得算法</title>
+      <link href="2021/05/16/ou-ji-li-de-suan-fa/"/>
+      <url>2021/05/16/ou-ji-li-de-suan-fa/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C语言 </tag>
+            
+            <tag> 编程语言 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 欧拉计划 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C语言中的函数</title>
       <link href="2021/05/15/c-yu-yan-zhong-de-han-shu/"/>
       <url>2021/05/15/c-yu-yan-zhong-de-han-shu/</url>
@@ -23,35 +54,6 @@
             <tag> C语言 </tag>
             
             <tag> 编程语言 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Numpy基础知识</title>
-      <link href="2021/05/12/numpy-ji-chu-zhi-shi/"/>
-      <url>2021/05/12/numpy-ji-chu-zhi-shi/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Numpy数组"><a href="#Numpy数组" class="headerlink" title="Numpy数组"></a>Numpy数组</h2><h2 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h2><h2 id="文件IO"><a href="#文件IO" class="headerlink" title="文件IO"></a>文件IO</h2><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h2 id="数组的属性"><a href="#数组的属性" class="headerlink" title="数组的属性"></a>数组的属性</h2><h2 id="数学计算"><a href="#数学计算" class="headerlink" title="数学计算"></a>数学计算</h2>]]></content>
-      
-      
-      <categories>
-          
-          <category> Numpy </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Python </tag>
-            
-            <tag> 数据分析 </tag>
-            
-            <tag> Numpy </tag>
             
         </tags>
       
