@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Numpy基础知识, 青青子衿">
+    <meta name="keywords" content="C语言中的函数, 青青子衿">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Numpy基础知识 | 青青子衿</title>
+    <title>C语言中的函数 | 青青子衿</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Numpy基础知识</h1>
+                    <h1 class="description center-align post-title">C语言中的函数</h1>
                 </div>
             </div>
         </div>
@@ -436,16 +436,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">C语言</span>
                             </a>
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                                <span class="chip bg-color">数据分析</span>
-                            </a>
-                        
-                            <a href="/tags/Numpy/">
-                                <span class="chip bg-color">Numpy</span>
+                            <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">编程语言</span>
                             </a>
                         
                     </div>
@@ -456,8 +452,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Numpy/" class="post-category">
-                                Numpy
+                            <a href="/categories/%E9%87%8D%E5%AD%A6C%E8%AF%AD%E8%A8%80/" class="post-category">
+                                重学C语言
                             </a>
                         
                     </div>
@@ -469,28 +465,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-12
+                    2021-05-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-12
+                    2021-05-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    22
+                    692
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -510,7 +506,252 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Numpy数组"><a href="#Numpy数组" class="headerlink" title="Numpy数组"></a>Numpy数组</h2><h2 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h2><h2 id="文件IO"><a href="#文件IO" class="headerlink" title="文件IO"></a>文件IO</h2><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h2 id="数组的属性"><a href="#数组的属性" class="headerlink" title="数组的属性"></a>数组的属性</h2><h2 id="数学计算"><a href="#数学计算" class="headerlink" title="数学计算"></a>数学计算</h2>
+                <h2 id="函数说明"><a href="#函数说明" class="headerlink" title="函数说明"></a>函数说明</h2><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210515161853082.png" alt="image-20210515161853082" style="zoom:80%;"></p>
+<p>函数分为函数声明和函数定义两部分，函数声明部分向编译器说明有一个函数，返回值和参数列表（参数个数和参数类型）。一般函数定义部分会放在函数调用之前。</p>
+<h3 id="练习-1"><a href="#练习-1" class="headerlink" title="练习 1"></a>练习 1</h3><p>请实现一个程序，先读入两个整数，k和b，输出<code>y=k*x+b</code>直线方程中x=1到x=100时的y的值</p>
+<pre class=" language-lang-c"><code class="language-lang-c">#include <stdio.h>
+
+int f(int k, int b, int x){
+    return k * x + b;
+}
+int main(){
+    int k, b;
+    scanf("%d%d", &k, &b);
+    for(int i = 1; i <= 100; i++){
+        printf("f(%d) = %d\n", i, f(k, b, i));
+    }
+    return 0;
+}
+</code></pre>
+<h2 id="K-amp-R-风格函数定义"><a href="#K-amp-R-风格函数定义" class="headerlink" title="K&amp;R 风格函数定义"></a>K&amp;R 风格函数定义</h2><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210515170243455.png" alt="image-20210515170243455" style="zoom:80%;"></p>
+<p>这种风格是上古时代的用法，目前大多数编译器也是支持的。</p>
+<h2 id="递归程序"><a href="#递归程序" class="headerlink" title="递归程序"></a>递归程序</h2><p>程序调用自身的编程技巧叫做<strong>递归</strong>。递归的程序的组成部分如下：</p>
+<ul>
+<li>语义信息（递归函数本身代表的信息）</li>
+<li>边界条件处理</li>
+<li>针对问题的处理过程和递归过程</li>
+<li>结果返回(return 、传出参数)</li>
+</ul>
+<p>递归和递推是两个截然不同的概念，递推是一种算法，队规是一种编程思想或技巧。</p>
+<h3 id="练习-2"><a href="#练习-2" class="headerlink" title="练习 2"></a>练习 2</h3><p>请实现一个程序，读入n，计算n的阶乘。</p>
+<pre class=" language-lang-c"><code class="language-lang-c">#include<stdio.h>
+
+int fac(int n){
+
+    if(n == 0) return 1;
+    return n * fac(n-1);
+}
+
+int main(){
+    int n;
+    while(~scanf("%d", &n)){
+        printf("fac(%d) = %d\n", n,fac(n));
+    }
+    return 0;
+}
+</code></pre>
+<p>下面将以练习2为例展开描述递归的本质。实际上递归可以分为<strong>向下递推</strong>和<strong>向上回归</strong>两部分。对于递归函数，不建议把整个递归过程展开去思考问题。</p>
+<h3 id="设计递归——数学归纳法"><a href="#设计递归——数学归纳法" class="headerlink" title="设计递归——数学归纳法"></a>设计递归——数学归纳法</h3><ul>
+<li><p>首先$f(1)$成立</p>
+</li>
+<li><p>假设$f(k)$成立</p>
+</li>
+<li>证明$f(k+1)$成立</li>
+</ul>
+<p>在动态规划问题中，数学归纳法有着非常广泛的应用。在递归程序中，我们需要借助栈来处理，栈是一种先进后出的数据结构，在Windows中，系统栈的大小是2MB，基于Linux的操作系统中，系统栈的大小是8MB≈8000000字节，也就是相当于我们开辟了一个2000000大小的整型数组所占用的空间。</p>
+<p>编程界有一个玄学：</p>
+<blockquote>
+<p>任何一个程序，都可以用递归的技巧去解决。</p>
+</blockquote>
+<h2 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h2><pre class=" language-lang-c"><code class="language-lang-c">int g(int (*f1)(int), int (*f2)(int), int (*f3)(int), int x){
+    if(x < 0){
+        return f1(x);
+    }
+    if(x < 100){
+        return f2(x);
+    }
+    return f3(x);
+}
+</code></pre>
+<p>上述程序表示一个分段函数的实现方式，这也是函数指针常用场景之一。</p>
+<h3 id="练习题1"><a href="#练习题1" class="headerlink" title="练习题1"></a>练习题1</h3><blockquote>
+<p>PojectEuler 45</p>
+<p>Triangle, pentagonal, and hexagonal numbers are generated by the following formulae:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Triangle</th>
+<th>$T_n=n(n+1)/2$</th>
+<th>$1, 3, 6, 10, 15, …$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pentagonal</strong></td>
+<td>$P_n=n(3n−1)/2$</td>
+<td>$1, 5, 12, 22, 35, …$</td>
+</tr>
+<tr>
+<td><strong>Hexagonal</strong></td>
+<td>$H_n=n(2n−1)$</td>
+<td>$1, 6, 15, 28, 45, …$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>It can be verified that T285 = P165 = H143 = 40755.</p>
+<p>Find the next triangle number that is also pentagonal and hexagonal.</p>
+</blockquote>
+<pre class=" language-lang-c"><code class="language-lang-c">#include<stdio.h>
+
+long long Triangle(long long n){
+    return n * (n + 1) >> 1;
+}
+
+long long Pentagonal(long long n){
+    return n * (3 * n - 1) >> 1;
+}
+
+long long Hexagonal(long long n){
+    return n * (2 * n - 1);
+}
+
+long long binary_search(long long (*arr)(long long), int n, long long x){
+    int head = 1, tail = n, mid;
+    while(head <= tail){
+        mid = ( head + tail ) >> 1 ;
+        if(arr(mid) == x) return 1;
+        if(arr(mid) < x) head = mid + 1;
+        else tail = mid - 1;
+    }
+    return 0;
+}
+int main(){
+    int n = 143;
+    while (1){
+        n++;
+        long long temp = Hexagonal(n);
+        if (!binary_search(Triangle, temp, temp)) continue;
+        if (!binary_search(Pentagonal, temp, temp)) continue;
+            printf("%lld\n", temp);
+            break;
+    }
+    return 0;
+}
+</code></pre>
+<p>函数是压缩的数组，数组是展开的函数，在数组中，其实也是一种函数映射关系，映射的规则是数组的下标。当然我们也可以对公式进行变型，会发现如果一个数是六边形数字，那么它一定也是三角形数字，因此我们可以去掉一层判定。</p>
+<pre class=" language-lang-c"><code class="language-lang-c">#include<stdio.h>
+
+long long Triangle(long long n){
+    return n * (n + 1) >> 1;
+}
+
+long long Pentagonal(long long n){
+    return n * (3 * n - 1) >> 1;
+}
+
+long long Hexagonal(long long n){
+    return n * (2 * n - 1);
+}
+
+long long binary_search(long long (*arr)(long long), int n, long long x){
+    int head = 1, tail = n, mid;
+    while(head <= tail){
+        mid = ( head + tail ) >> 1 ;
+        if(arr(mid) == x) return 1;
+        if(arr(mid) < x) head = mid + 1;
+        else tail = mid - 1;
+    }
+    return 0;
+}
+int main(){
+    int n = 143;
+    while (1){
+        n++;
+        long long temp = Hexagonal(n);
+        //if (!binary_search(Triangle, temp, temp)) continue;
+        if (!binary_search(Pentagonal, temp, temp)) continue;
+            printf("%lld\n", temp);
+            break;
+    }
+    return 0;
+}
+</code></pre>
+<h2 id="二分查找算法"><a href="#二分查找算法" class="headerlink" title="二分查找算法"></a>二分查找算法</h2><p><img src="https://cdn.jsdelivr.net/gh/UPTOLIMIT/PicBed//img/image-20210516203205883.png" alt="image-20210516203205883" style="zoom:80%;"></p>
+<ul>
+<li>时间复杂度 $O(log_2{10})$</li>
+<li><p>空间复杂度 $$</p>
+</li>
+<li><p>带查找区间必须满足单调性</p>
+</li>
+</ul>
+<h3 id="练习-1-1"><a href="#练习-1-1" class="headerlink" title="练习 1"></a>练习 1</h3><p>输入n个值，使用二分查找法查找指定值x。</p>
+<pre class=" language-lang-c"><code class="language-lang-c">#include<stdio.h>
+#define MAX_N 100
+
+int binary_search(int *arr, int n, int x){
+    int head = 0, tail = n - 1, mid;
+    while (head <= tail){
+        mid = (head + tail) >> 2;
+        if(arr[mid] == x) return mid;
+        if(arr[mid] < x) head = mid + 1;
+        else tail = mid - 1;
+    }
+    return -1;
+}
+
+int main(){
+    int arr[MAX_N + 5] = {0}, n;
+    scanf("%d", &n);
+    for( int i = 0; i < n; i++ ){
+        scanf("%d", &arr[i]);
+    }
+    int x;
+    while(~scanf("%d", &x)){
+        int ret = binary_search(arr, n, x);
+        if(ret != -1){
+            printf("success to find %d at arr[%d]\n ", x, ret);
+        }else{
+            printf("fail to find %d\n", x);
+        }
+    }
+    return 0;
+}
+</code></pre>
+<p>二分查找的递归表示：</p>
+<pre class=" language-lang-c"><code class="language-lang-c">#include<stdio.h>
+#define MAX_N 100
+
+int binary_search(int *arr, int l, int r,int x){
+    if (l > r) return -1;
+    int mid = (l + r) >> 1;
+    if(arr[mid] == x) return mid;
+    else if (arr[mid] > x) 
+        return binary_search(arr, l, mid - 1, x);
+    else 
+        return binary_search(arr, mid + 1, r, x);
+}
+
+int main(){
+    int arr[MAX_N + 5] = {0}, n;
+    scanf("%d", &n);
+    for( int i = 0; i < n; i++ ){
+        scanf("%d", &arr[i]);
+    }
+    int x;
+    while(~scanf("%d", &x)){
+        int ret = binary_search(arr, 0, n, x);
+        if(ret != -1){
+            printf("success to find %d at arr[%d]\n ", x, ret);
+        }else{
+            printf("fail to find %d\n", x);
+        }
+    }
+    return 0;
+}
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -536,7 +777,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://uptolimit.github.io/2021/05/12/numpy-ji-chu-zhi-shi/">https://uptolimit.github.io/2021/05/12/numpy-ji-chu-zhi-shi/</a>
+                    <a href="https://uptolimit.github.io/2021/05/15/c-yu-yan-zhong-de-han-shu/">https://uptolimit.github.io/2021/05/15/c-yu-yan-zhong-de-han-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -574,16 +815,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">C语言</span>
                                 </a>
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                                    <span class="chip bg-color">数据分析</span>
-                                </a>
-                            
-                                <a href="/tags/Numpy/">
-                                    <span class="chip bg-color">Numpy</span>
+                                <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">编程语言</span>
                                 </a>
                             
                         </div>
@@ -755,9 +992,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/05/15/c-yu-yan-zhong-de-han-shu/">
                     <div class="card-image">
@@ -775,9 +1013,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -790,6 +1028,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -812,13 +1051,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/11/kuai-su-da-jian-sumo-fang-zhen-shi-li/">
+                <a href="/2021/05/12/numpy-ji-chu-zhi-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="快速搭建SUMO仿真实例">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Numpy基础知识">
                         
-                        <span class="card-title">快速搭建SUMO仿真实例</span>
+                        <span class="card-title">Numpy基础知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -829,14 +1068,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/SUMO/" class="post-category">
-                                    SUMO
+                            <a href="/categories/Numpy/" class="post-category">
+                                    Numpy
                                 </a>
                             
                             
@@ -846,16 +1085,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BD%A6%E8%81%94%E7%BD%91/">
-                        <span class="chip bg-color">车联网</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
-                    <a href="/tags/%E4%BB%BF%E7%9C%9F/">
-                        <span class="chip bg-color">仿真</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">数据分析</span>
                     </a>
                     
-                    <a href="/tags/SUMO/">
-                        <span class="chip bg-color">SUMO</span>
+                    <a href="/tags/Numpy/">
+                        <span class="chip bg-color">Numpy</span>
                     </a>
                     
                 </div>
