@@ -6,7 +6,7 @@
   <link href="https://uptolimit.github.io/atom.xml" rel="self"/>
   
   <link href="https://uptolimit.github.io/"/>
-  <updated>2021-05-16T16:21:27.717Z</updated>
+  <updated>2021-05-18T11:09:27.272Z</updated>
   <id>https://uptolimit.github.io/</id>
   
   <author>
@@ -17,12 +17,52 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>泽勒一致性算法</title>
+    <link href="https://uptolimit.github.io/2021/05/18/ze-le-yi-zhi-xing-suan-fa/"/>
+    <id>https://uptolimit.github.io/2021/05/18/ze-le-yi-zhi-xing-suan-fa/</id>
+    <published>2021-05-18T07:57:15.000Z</published>
+    <updated>2021-05-18T11:09:27.272Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;泽勒一致性是由克里斯汀・泽勒开发的用于计算某天是星期几的算法。这个公式是：&lt;/p&gt;
+&lt;script</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://uptolimit.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="C语言" scheme="https://uptolimit.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="编程语言" scheme="https://uptolimit.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="算法" scheme="https://uptolimit.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="OJ" scheme="https://uptolimit.github.io/tags/OJ/"/>
+    
+  </entry>
+  
+  <entry>
     <title>欧几里得算法</title>
     <link href="https://uptolimit.github.io/2021/05/16/ou-ji-li-de-suan-fa/"/>
     <id>https://uptolimit.github.io/2021/05/16/ou-ji-li-de-suan-fa/</id>
     <published>2021-05-16T15:56:23.000Z</published>
-    <updated>2021-05-16T16:21:27.717Z</updated>
+    <updated>2021-05-18T02:54:39.203Z</updated>
     
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;概况&quot;&gt;&lt;a href=&quot;#概况&quot; class=&quot;headerlink&quot;</summary>
+        
+      
     
     
     

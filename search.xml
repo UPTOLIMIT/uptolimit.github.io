@@ -4,11 +4,42 @@
   
     
     <entry>
+      <title>泽勒一致性算法</title>
+      <link href="2021/05/18/ze-le-yi-zhi-xing-suan-fa/"/>
+      <url>2021/05/18/ze-le-yi-zhi-xing-suan-fa/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>泽勒一致性是由克里斯汀・泽勒开发的用于计算某天是星期几的算法。这个公式是：</p><script type="math/tex; mode=display">h = (q + 26(m+1)/10+k+k/4+j/4+5j)\% 7</script><p>其中：</p><ul><li>$h$是一个星期中的某一天（0为星期六，1为星期天，2为星期一……6为星期五）</li><li>$q$是某月的第几天</li><li>$m$是月份（3为三月，4为四月……）。一月和二月分别记为上一年的13和14月</li><li>$j$是世纪数-1（即为$year\div 100$）</li><li>$k$是该世纪的第几年（即为$year\%100$）</li></ul><p>注意，公式中的除法是整除。编写程序，输入年月日，输出它是一周中的星期几。</p><p> 一月和二月在公式里是用 13 和 14 表示的，所以需要将用户输入的月份 1 转换为 13，2转换为 14，同时将年份改为前一年。</p><h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>输入三个整数，分别表示年月日。保证数据合法。</p><h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>输出一个整数，表示是一周中的周几（从 1 到 7）。</p><h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><pre class=" language-lang-c"><code class="language-lang-c">#include<stdio.h>int main(){    int d, m, y;    int q, k, j;    int h;    scanf("%d%d%d", &y, &m, &d);    q = d;    if(m == 1){        m = 13;        y--;    }     if(m == 2){        m = 14;        y--;    }    j = y / 100;    k = y % 100;    h = (q + 26 * (m + 1) / 10 + k + k / 4 + j / 4 + 5 * j) % 7;    switch(h){        case 1 :            printf("7");            break;        case 2 :            printf("1");            break;        case 3 :            printf("2");            break;        case 4 :            printf("3");            break;        case 5 :            printf("4");            break;        case 6 :            printf("5");            break;        case 0 :            printf("6");            break;    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C语言 </tag>
+            
+            <tag> 编程语言 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> OJ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>欧几里得算法</title>
       <link href="2021/05/16/ou-ji-li-de-suan-fa/"/>
       <url>2021/05/16/ou-ji-li-de-suan-fa/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="概况"><a href="#概况" class="headerlink" title="概况"></a>概况</h2><ul><li>又名”辗转相除法“</li><li>迄今为止已知的最古老算法，距今2321年</li><li>用于快速计算两个数字的最大公约数</li><li>还可以用于快速求解$a\cdot x+b\cdot y=1$方程的一组整数解</li></ul>]]></content>
       
       
       <categories>
