@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title></title>
-      <link href="2021/05/24/zheng-jiao-shi-yan-she-ji/"/>
-      <url>2021/05/24/zheng-jiao-shi-yan-she-ji/</url>
-      
-        <content type="html"><![CDATA[<h1 id="正交试验设计"><a href="#正交试验设计" class="headerlink" title="正交试验设计"></a>正交试验设计</h1><h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>建立$y$与$x$之间的关系</p><div class="table-container"><table><thead><tr><th style="text-align:center">y</th><th style="text-align:center">x</th><th style="text-align:center">方法</th></tr></thead><tbody><tr><td style="text-align:center">定量</td><td style="text-align:center">定量</td><td style="text-align:center">一元线性回归</td></tr><tr><td style="text-align:center">定量</td><td style="text-align:center">定量/定性</td><td style="text-align:center">多元线性回归、神经网络</td></tr><tr><td style="text-align:center">定性</td><td style="text-align:center">定量/定性</td><td style="text-align:center">Logistic回归、神经网络</td></tr><tr><td style="text-align:center">定性</td><td style="text-align:center">定性</td><td style="text-align:center">方差分析</td></tr></tbody></table></div><h2 id="最优方案"><a href="#最优方案" class="headerlink" title="最优方案"></a>最优方案</h2><p>重要因素</p><p>1. </p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>泽勒一致性算法</title>
       <link href="2021/05/18/ze-le-yi-zhi-xing-suan-fa/"/>
       <url>2021/05/18/ze-le-yi-zhi-xing-suan-fa/</url>
