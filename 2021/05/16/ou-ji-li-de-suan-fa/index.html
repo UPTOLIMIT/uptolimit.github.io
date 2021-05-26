@@ -480,21 +480,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-18
+                    2021-05-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    65
+                    429
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -520,6 +520,59 @@
 <li>用于快速计算两个数字的最大公约数</li>
 <li>还可以用于快速求解$a\cdot x+b\cdot y=1$方程的一组整数解</li>
 </ul>
+<h2 id="数学证明"><a href="#数学证明" class="headerlink" title="数学证明"></a>数学证明</h2><p>证明以下结论成立</p>
+<script type="math/tex; mode=display">
+gcd(a,b)\Leftrightarrow gcd(b,a\%b)</script><p>证明：若要证明上述结论成立，即要证明</p>
+<ol>
+<li>$gcd(a,b)$与$gcd(b,a\%b)$具有公共因子$r$。</li>
+<li>$r$在$gcd(a,b)$与$gcd(b,a\%b)$的公因子中是最大的。</li>
+</ol>
+<p>对于1，我们假设$gcd(a,b)=r$，证明在$(b,a\%b)$的因子中也包含$r$。</p>
+<script type="math/tex; mode=display">
+\left\{ {\begin{array}{*{20}{c}}
+a=x\cdot r\\
+b=y\cdot r
+\end{array}} \right.
+(x,y\in Z)\Rightarrow x,y互素(gcd(x,y)=1)</script><p>则有</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+a\%b &= a-k\cdot b(k\in Z,k=a/b)\\
+&=x\cdot r-k\cdot y\cdot r\\
+&=r\cdot(x-k\cdot y)
+\end{aligned}</script><p>的证！</p>
+<p>对于2，我们假设在$a$、$b$中$r$为最大因子，证明在$b$、$a\%b$中$r$也为最大因子。</p>
+<script type="math/tex; mode=display">
+\left\{ {\begin{array}{*{20}{c}}
+b=y\cdot r\\
+a\%b = r(x-k\cdot y)
+\end{array}} \right.</script><p>只需证明$y$与$x-k\cdot y$互素即可，即证$gcd(y,x-k\cdot y)=1$，不妨设$gcd(y,x-k\cdot y)=d$，则只需证明$d\equiv 1$</p>
+<script type="math/tex; mode=display">
+\left\{ {\begin{array}{*{20}{c}}
+y=m\cdot d\\
+x-ky = nd 
+\end{array}} \right.(m,n\in Z)\Rightarrow
+\left\{ {\begin{array}{*{20}{c}}
+y=m\cdot d\\
+\begin{aligned}
+x &= n\cdot d+k\cdot y\\
+&=n\cdot d+k\cdot md\\
+&=d(n+k\cdot m)
+\end{aligned}
+\end{array}} \right.</script><p>而有前面证明可知$x,y$互素，所以$d\equiv 1$，的证！</p>
+<h2 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h2><pre class=" language-lang-c"><code class="language-lang-c">#include<stdio.h>
+
+int gcd(int a, int b){
+    return (b ? gcd(b, a % b) : a);
+}
+
+int main(){
+    int a, b;
+    while(~scanf("%d%d", &a, &b)){
+        printf("gcd(%d, %d) = %d\n", a, b, gcd(a, b));
+    }
+    return 0;
+}
+</code></pre>
 
                 
             </div>
@@ -1083,7 +1136,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.5k</span>&nbsp;字
+                class="white-color">16k</span>&nbsp;字
             
             
             
