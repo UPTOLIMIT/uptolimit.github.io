@@ -4,6 +4,62 @@
   
     
     <entry>
+      <title>C++笔记（杂项）</title>
+      <link href="2021/09/07/c-bi-ji-za-xiang/"/>
+      <url>2021/09/07/c-bi-ji-za-xiang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><p>我们可以简单的理解一个变量的<strong>作用域（scope）</strong>一般可以被界定为变量声明语句之后、包裹了它的声明语句的最内一层<code>{}</code>之内。</p><h2 id="递归问题"><a href="#递归问题" class="headerlink" title="递归问题"></a>递归问题</h2><h3 id="头递归"><a href="#头递归" class="headerlink" title="头递归"></a>头递归</h3><pre class=" language-lang-c++"><code class="language-lang-c++">int fac(int n) {    if (n == 1) {        return 1;    }    return fac(n - 1) * n;}</code></pre><p>在一般条件满足时（如这里的<code>n==1</code>）满足时，返回一个确定的值，而在其他情况下，返回一个包含本身函数的递归调用的设计，称为<strong>头递归</strong>（head recursion），在头递归的实现中，我们在进行下一层的调用前，没有进行计算。在下一层返回后，我们才完成了这一层的计算。</p><h3 id="尾递归"><a href="#尾递归" class="headerlink" title="尾递归"></a>尾递归</h3><pre class=" language-lang-cpp"><code class="language-lang-cpp">int fac(int n, int product){    if(n == 0){        return product;    }    product = product * n;    return fac(n - 1, product);}</code></pre><p>在<strong>尾递归</strong>的实现中，每一次函数的递归调用都会将一个阶段性的结果传递到下一个被调用的函数中，当最终的一般条件（如这里的<code>n==0</code>）满足时，把最终结果直接返回。我们在进行下一层的调用前，会先进行计算，在最终一般条件满足时，会将计算的结果逐层直接返回。</p><p>学习递归的函数调用更多是学习这种与数学归纳法有异曲同工之妙的思想。在遇到问题时，很多情况下，我们可以把待解问题逐层归约为更简单的问题，直到这个问题变为一个显而易见的一般性问题。这种思想在程序设计中就是递归。</p><h3 id="递归求解汉诺塔问题"><a href="#递归求解汉诺塔问题" class="headerlink" title="递归求解汉诺塔问题"></a>递归求解汉诺塔问题</h3><ol><li>1 个盘子：直接移动， “N==1” 是递归终结条件。</li><li>N 个盘子：把移动 N 个盘子的问题转化为移动 N-1 盘子的问题。<br>(1) 把 A 上面的 N-1 个盘子移动 B（借助 C）；<br>(2) 把第 N 个盘子一道 C；<br>(3) 把 B 上的 N-1 个盘子移到 C（借助 A）</li></ol><pre class=" language-lang-cpp"><code class="language-lang-cpp">#include<iostream>using std::cin;using std::cout;using std::endl;void hanoi(int n, char left, char middle, char right) {    if (n == 1) {        cout << left << "-->" << right << endl;    }    else {        hanoi(n - 1, left, right, middle);        cout << left << "-->" << right << endl;        hanoi(n - 1, middle, left, right);    }}int main() {    int n;    cin >> n;    hanoi(n, 'A', 'B', 'C');    return 0;}</code></pre><h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><h3 id="引用传递"><a href="#引用传递" class="headerlink" title="引用传递"></a>引用传递</h3><p><code>&amp;</code>符号既可以表示引用，也可以表示取地址运算符。<code>&amp;</code>符号出现在变量声明中表示声明一个引用，而出现在某个具体的表达式中则表示取地址运算符。</p><pre class=" language-lang-cpp"><code class="language-lang-cpp">int a = 3;int &ra = a; //定义引用int *p = &a;  //取地址</code></pre><h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><pre class=" language-lang-cpp"><code class="language-lang-cpp">int add(int x = 5, int y = 6){ //声明默认形参    return x+y;}int main(){    add(10, 20); //用实参初始化形参，实现10+20    add(10);//x初始化为10，y使用默认值6    add(); //x和y都使用默认值，即5+6}</code></pre><p>需要注意的是，有默认值的形参必须放在形参列表的最后，也就是说。在有默认值的形参右边。不能出现没有默认值的形参。如下所示</p><pre class=" language-lang-cpp"><code class="language-lang-cpp">int add(int x, int y=5, int z=6);</code></pre><p>而下面的用法是错误的</p><pre class=" language-lang-cpp"><code class="language-lang-cpp">int add(int x=1, int y=5, int z);int add(int x, int y=5, int z);</code></pre><h3 id="参数类型为函数"><a href="#参数类型为函数" class="headerlink" title="参数类型为函数"></a>参数类型为函数</h3><p>函数不像变量一样可以进行值传递，我们将函数作为参数传递时，需要传递它的地址。</p><p><img src="https://gitee.com/Gugoole/PicBed/raw/master/e01c23d19ebab4e5988cd48c8e2a2a87f3ca9eb3.png" alt="e01c23d19ebab4e5988cd48c8e2a2a87f3ca9eb3" style="zoom:80%;"></p><pre class=" language-lang-cpp"><code class="language-lang-cpp">int g(float (*f)(int), int a){    return (*f)(a);}</code></pre><p>在调用函数<code>g</code>，并且将函数地址作为参数时，直接将函数名传入就可以了</p><pre class=" language-lang-cpp"><code class="language-lang-cpp">float sqrt_minus_one(int x){    return sqrt(x) - 1;}</code></pre><pre class=" language-lang-cpp"><code class="language-lang-cpp">g(sqrt_minus_one, number)</code></pre><h2 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h2><p>编译器根据<strong>实参与形参的类型以及个数</strong>的最佳匹配，自动确定要调用的函数，这就是函数的重载。</p><p>简而言之，函数要可以重载，两个名字相同的函数必须具有不同的形参——这里的“不同”，指的是形参的个数或者形参的类型，这两者只要有一方面不同，就可以认为是不同的形参。</p><p>函数是否可以重载，与函数的返回值，以及形参的名称无关，即如果函数名称和形参类型都相同的话，不管返回值是否相同，都会被编译器判定为语法错误（函数重复定义）。</p><pre class=" language-lang-cpp"><code class="language-lang-cpp">int add(int x, int y);float add(float x, float y); // 形参类型不同int add(int x, int y);int add (int x, int y, int z); //形参个数不同</code></pre><p>对于有默认形参的函数重载时，需要避免二义性：</p><pre class=" language-lang-cpp"><code class="language-lang-cpp">void fun(int length, int width=2, int height=3);void fun(int length);</code></pre><h2 id="函数调用栈"><a href="#函数调用栈" class="headerlink" title="函数调用栈"></a>函数调用栈</h2><h3 id="全局变量与局部变量"><a href="#全局变量与局部变量" class="headerlink" title="全局变量与局部变量"></a>全局变量与局部变量</h3><p>对于全局变量来说。在编译器编译产生的目标代码中可以使用一个唯一确定的地址进行定位。</p><h3 id="调用栈的实质"><a href="#调用栈的实质" class="headerlink" title="调用栈的实质"></a>调用栈的实质</h3><p>调用栈的实质是系统分配的一段连续区域的内存空间——调用栈中的数据，在存储的时候按照函数的调用，分成一个一个的“小方格”，成为<strong>栈帧</strong>，每一个栈帧都跟一次函数调用一一对应。栈帧中存储了一系列跟函数本身有关的信息，包括这次函数调用中的<strong>形参值</strong>、<strong>局部变量值</strong>、<strong>一些控制信息</strong>和<strong>一些临时数据</strong>。</p><p>每一次函数调用时，都会有一个栈帧被压入调用栈，调用完后相应的栈帧就会被弹出。</p><p>一个函数在执行过程中，能访问的除了栈外的全局变量外，只有它自己的栈帧。</p><h2 id="类与面向对象"><a href="#类与面向对象" class="headerlink" title="类与面向对象"></a>类与面向对象</h2><h3 id="构造函数的特点"><a href="#构造函数的特点" class="headerlink" title="构造函数的特点"></a>构造函数的特点</h3><ol><li>如果参数列表为空，则不为数据成员赋初值</li><li>如果类内定义了成员的初始值，则使用定义的初始值</li><li>如果没有定义类内初始值，则以默认方式初始化</li><li>基本类型的数据默认初始化的值是不确定的</li></ol><h3 id="拷贝构造函数"><a href="#拷贝构造函数" class="headerlink" title="拷贝构造函数"></a>拷贝构造函数</h3><p>它的作用就是用一个已有的对象来执行一个新的对象的构造。拷贝构造函数具有一般构造函数的所有特性——它的<strong>形参是本类的一个对象的引用</strong>，作用是用一个已经存在的对象（即为函数的参数）来初始化一个新的对象，拷贝构造函数使用<strong>引用传参</strong></p><h4 id="拷贝构造函数会在什么时候被调用？"><a href="#拷贝构造函数会在什么时候被调用？" class="headerlink" title="拷贝构造函数会在什么时候被调用？"></a>拷贝构造函数会在什么时候被调用？</h4><ol><li><p>当用类的一个对象去初始化该类的另一个对象的时候：</p><pre class=" language-lang-cpp"><code class="language-lang-cpp">Point a(1, 2);Point b(a);//用对象a初始化对象b，拷贝构造函数被调用Point c=b;//用对象b给对象c赋值，拷贝构造函数被调用</code></pre></li><li><p>当函数的形参是类的对象，调用函数时进行形实结合的时候：</p><pre class=" language-lang-cpp"><code class="language-lang-cpp">void f(Point p){    //code here}int main(){    Point a(1, 2);    f(a);    return 0;}</code></pre></li><li><p>当函数的返回值是类的对象，函数执行完成返回调用者的时候：</p><pre class=" language-lang-cpp"><code class="language-lang-cpp">/*函数调用完成，这里的临时对象a会被销毁，函数返回的是通过拷贝构造函数，在主调函数中用a重新构造的对象。*/Point g(){    Point a(1, 2);    return a;}</code></pre></li></ol><h4 id="初始化列表"><a href="#初始化列表" class="headerlink" title="初始化列表"></a>初始化列表</h4><p>大多数情况下，使用初始化列表，或者是在构造函数中赋值，两种方法的效果是差不多的——而初始化列表在效率上相对于在构造函数中赋值，会存在一定的优势，如果函数的成员变量是基本数据类型的话，这种优势不会十分明显，但是如果函数的成员变量是较为复杂的自定义数据类型的对象的话，那么初始化列表在调用开销的节约方面，优势会非常显著。</p><p>在某些情况下，比如需要初始化的数据成员是对象（继承时调用基类构造函数），需要初始化<code>const</code>修饰的类成员，或者需要初始化引用成员数据，都必须使用初始化列表来进行初始化。</p><h3 id="类的前向引用声明"><a href="#类的前向引用声明" class="headerlink" title="类的前向引用声明"></a>类的前向引用声明</h3><p>指的是引用未定义的类之前，首先把这个类的名字告诉编译器，这样编译器遇到标识符的时候，就知道那是一个类名，不会引发编译错误。<strong>需要注意的是</strong>，尽管使用了前向引用声明，但是在提供了一个完整的类定义之前，不能定义该类的对象，也不能在成员函数中使用该对象。</p><pre class=" language-lang-cpp"><code class="language-lang-cpp">class Elder;class Toad{    Elder h;//错误，类的定义不完整};class Elder{    Toad h;};</code></pre><p>这个时候我们可以使用前向引用声明类的引用或者指针，这样就不会发生编译错误了。</p><pre class=" language-lang-cpp"><code class="language-lang-cpp">class Elder;class Toad{    Elder &h;};class Elder{    Toad &h;};</code></pre><p><strong>注意</strong>，即便我们声明了引用，我们仍然不能在类内的方法定义中直接使用i当以不完善的类的方法：</p><pre class=" language-lang-cpp"><code class="language-lang-cpp">class Elder;class Toad{    private:        Elder &h;    public:        void setWeather(){                h.sunny();//不合法，因为此时h尚未定义完善        }}</code></pre><h2 id="数组、多维数组与字符串"><a href="#数组、多维数组与字符串" class="headerlink" title="数组、多维数组与字符串"></a>数组、多维数组与字符串</h2><h3 id="二维数组的旋转"><a href="#二维数组的旋转" class="headerlink" title="二维数组的旋转"></a>二维数组的旋转</h3><h4 id="坐标变换的对应关系"><a href="#坐标变换的对应关系" class="headerlink" title="坐标变换的对应关系"></a>坐标变换的对应关系</h4><pre class=" language-lang-cpp"><code class="language-lang-cpp"># m行n列矩阵旋转90°for (int i = 0; i < m; i++) {    for (int j = 0; j < n; j++) {        j && cout << " ";        cout << a[m-1-j][i];    }    cout << endl;}</code></pre><pre class=" language-lang-cpp"><code class="language-lang-cpp"># m行n列矩阵旋转180°for (int i = 0; i < m; i++) {    for (int j = 0; j < n; j++) {        j && cout << " ";        cout << a[m-1-j][n-1-i];    }    cout << endl;}</code></pre><pre class=" language-lang-cpp"><code class="language-lang-cpp"># m行n列矩阵旋转270°for (int i = 0; i < m; i++) {    for (int j = 0; j < n; j++) {        j && cout << " ";        cout << a[j][n-1-i];    }    cout << endl;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 重学C++语言 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 编程语言 </tag>
+            
+            <tag> C++语言 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Numpy基础知识</title>
+      <link href="2021/05/12/numpy-ji-chu-zhi-shi/"/>
+      <url>2021/05/12/numpy-ji-chu-zhi-shi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Numpy数组"><a href="#Numpy数组" class="headerlink" title="Numpy数组"></a>Numpy数组</h2><h2 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h2><h2 id="文件IO"><a href="#文件IO" class="headerlink" title="文件IO"></a>文件IO</h2><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h2 id="数组的属性"><a href="#数组的属性" class="headerlink" title="数组的属性"></a>数组的属性</h2><h2 id="数学计算"><a href="#数学计算" class="headerlink" title="数学计算"></a>数学计算</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Numpy </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 数据分析 </tag>
+            
+            <tag> Numpy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>快速搭建SUMO仿真实例</title>
       <link href="2021/05/11/kuai-su-da-jian-sumo-fang-zhen-shi-li/"/>
       <url>2021/05/11/kuai-su-da-jian-sumo-fang-zhen-shi-li/</url>
