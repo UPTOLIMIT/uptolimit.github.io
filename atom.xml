@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>青青子衿</title>
+  
+  <subtitle>Everything will be better!</subtitle>
+  <link href="https://uptolimit.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://uptolimit.github.io/"/>
+  <updated>2022-08-26T10:31:28.002Z</updated>
+  <id>https://uptolimit.github.io/</id>
+  
+  <author>
+    <name>UPTOLIMIT</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>无人驾驶系列(一) 概述</title>
+    <link href="https://uptolimit.github.io/2022/04/26/wu-ren-jia-shi-xi-lie-yi-gai-shu/"/>
+    <id>https://uptolimit.github.io/2022/04/26/wu-ren-jia-shi-xi-lie-yi-gai-shu/</id>
+    <published>2022-04-26T00:52:45.000Z</published>
+    <updated>2022-08-26T10:31:28.002Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;无人驾驶行业概述&quot;&gt;&lt;a href=&quot;#无人驾驶行业概述&quot; class=&quot;headerlink&quot; title=&quot;无人驾驶行业概述&quot;&gt;&lt;/a&gt;无人驾驶行业概述&lt;/h2&gt;&lt;h3 id=&quot;什么是无人驾驶&quot;&gt;&lt;a href=&quot;#什么是无人驾驶&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="无人驾驶" scheme="https://uptolimit.github.io/categories/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/"/>
+    
+    
+    <category term="无人驾驶" scheme="https://uptolimit.github.io/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/"/>
+    
+    <category term="算法" scheme="https://uptolimit.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Damerau-Levenshtein距离算法原理与应用实践</title>
+    <link href="https://uptolimit.github.io/2022/01/13/damerau-levenshtein-ju-chi-suan-fa-yuan-li-yu-ying-yong-shi-jian/"/>
+    <id>https://uptolimit.github.io/2022/01/13/damerau-levenshtein-ju-chi-suan-fa-yuan-li-yu-ying-yong-shi-jian/</id>
+    <published>2022-01-13T04:46:20.000Z</published>
+    <updated>2022-01-13T04:46:22.000Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>背包九讲</title>
+    <link href="https://uptolimit.github.io/2021/10/30/bei-bao-jiu-jiang/"/>
+    <id>https://uptolimit.github.io/2021/10/30/bei-bao-jiu-jiang/</id>
+    <published>2021-10-30T03:15:10.000Z</published>
+    <updated>2022-01-13T04:43:30.000Z</updated>
+    
+    
+    
+    
+    <category term="算法" scheme="https://uptolimit.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="蓝桥杯" scheme="https://uptolimit.github.io/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/"/>
+    
+    <category term="背包问题" scheme="https://uptolimit.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Visual studio与C++</title>
+    <link href="https://uptolimit.github.io/2021/09/16/visual-studio-yu-c/"/>
+    <id>https://uptolimit.github.io/2021/09/16/visual-studio-yu-c/</id>
+    <published>2021-09-16T12:04:59.000Z</published>
+    <updated>2021-09-17T09:16:44.572Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Visual-Studio-的Debug&quot;&gt;&lt;a href=&quot;#Visual-Studio-的Debug&quot; class=&quot;headerlink&quot; title=&quot;Visual Studio 的Debug&quot;&gt;&lt;/a&gt;Visual Studio</summary>
+        
+      
+    
+    
+    
+    <category term="开发工具笔记" scheme="https://uptolimit.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="工具" scheme="https://uptolimit.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="Trciks" scheme="https://uptolimit.github.io/tags/Trciks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++笔记（杂项）</title>
+    <link href="https://uptolimit.github.io/2021/09/07/c-bi-ji-za-xiang/"/>
+    <id>https://uptolimit.github.io/2021/09/07/c-bi-ji-za-xiang/</id>
+    <published>2021-09-07T13:55:44.000Z</published>
+    <updated>2021-09-23T12:42:24.114Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;变量作用域&quot;&gt;&lt;a href=&quot;#变量作用域&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="重学C++语言" scheme="https://uptolimit.github.io/categories/%E9%87%8D%E5%AD%A6C-%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="编程语言" scheme="https://uptolimit.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="C++语言" scheme="https://uptolimit.github.io/tags/C-%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Numpy基础知识</title>
+    <link href="https://uptolimit.github.io/2021/05/12/numpy-ji-chu-zhi-shi/"/>
+    <id>https://uptolimit.github.io/2021/05/12/numpy-ji-chu-zhi-shi/</id>
+    <published>2021-05-12T03:09:05.000Z</published>
+    <updated>2021-09-07T14:18:57.697Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Numpy数组&quot;&gt;&lt;a href=&quot;#Numpy数组&quot; class=&quot;headerlink&quot; title=&quot;Numpy数组&quot;&gt;&lt;/a&gt;Numpy数组&lt;/h2&gt;&lt;h2 id=&quot;创建数组&quot;&gt;&lt;a href=&quot;#创建数组&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Numpy" scheme="https://uptolimit.github.io/categories/Numpy/"/>
+    
+    
+    <category term="Python" scheme="https://uptolimit.github.io/tags/Python/"/>
+    
+    <category term="数据分析" scheme="https://uptolimit.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    <category term="Numpy" scheme="https://uptolimit.github.io/tags/Numpy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>快速搭建SUMO仿真实例</title>
+    <link href="https://uptolimit.github.io/2021/05/11/kuai-su-da-jian-sumo-fang-zhen-shi-li/"/>
+    <id>https://uptolimit.github.io/2021/05/11/kuai-su-da-jian-sumo-fang-zhen-shi-li/</id>
+    <published>2021-05-11T14:59:30.000Z</published>
+    <updated>2021-09-26T05:56:51.411Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装SUMO&quot;&gt;&lt;a href=&quot;#安装SUMO&quot; class=&quot;headerlink&quot; title=&quot;安装SUMO&quot;&gt;&lt;/a&gt;安装SUMO&lt;/h2&gt;&lt;p&gt;首先在本地PC上安装好SUMO仿真软件，下载&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="SUMO" scheme="https://uptolimit.github.io/categories/SUMO/"/>
+    
+    
+    <category term="车联网" scheme="https://uptolimit.github.io/tags/%E8%BD%A6%E8%81%94%E7%BD%91/"/>
+    
+    <category term="仿真" scheme="https://uptolimit.github.io/tags/%E4%BB%BF%E7%9C%9F/"/>
+    
+    <category term="SUMO" scheme="https://uptolimit.github.io/tags/SUMO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python基础知识</title>
+    <link href="https://uptolimit.github.io/2021/05/11/python-ji-chu-zhi-shi/"/>
+    <id>https://uptolimit.github.io/2021/05/11/python-ji-chu-zhi-shi/</id>
+    <published>2021-05-11T06:53:53.000Z</published>
+    <updated>2021-05-11T12:09:20.366Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;变量与字符串&quot;&gt;&lt;a href=&quot;#变量与字符串&quot; class=&quot;headerlink&quot; title=&quot;变量与字符串&quot;&gt;&lt;/a&gt;变量与字符串&lt;/h2&gt;&lt;pre class=&quot; language-lang-python&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="重学Python语言" scheme="https://uptolimit.github.io/categories/%E9%87%8D%E5%AD%A6Python%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="编程语言" scheme="https://uptolimit.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="Python" scheme="https://uptolimit.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL基础知识</title>
+    <link href="https://uptolimit.github.io/2021/05/10/mysql-ji-chu-zhi-shi/"/>
+    <id>https://uptolimit.github.io/2021/05/10/mysql-ji-chu-zhi-shi/</id>
+    <published>2021-05-10T09:05:59.000Z</published>
+    <updated>2021-05-11T16:19:22.672Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数据库介绍&quot;&gt;&lt;a href=&quot;#数据库介绍&quot; class=&quot;headerlink&quot; title=&quot;数据库介绍&quot;&gt;&lt;/a&gt;数据库介绍&lt;/h2&gt;&lt;h3 id=&quot;数据库管理系统&quot;&gt;&lt;a href=&quot;#数据库管理系统&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="重学数据库" scheme="https://uptolimit.github.io/categories/%E9%87%8D%E5%AD%A6%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="SQL" scheme="https://uptolimit.github.io/tags/SQL/"/>
+    
+    <category term="MySQL" scheme="https://uptolimit.github.io/tags/MySQL/"/>
+    
+    <category term="数据库" scheme="https://uptolimit.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>程序流程控制方法</title>
+    <link href="https://uptolimit.github.io/2021/05/09/cheng-xu-liu-cheng-kong-zhi-fang-fa/"/>
+    <id>https://uptolimit.github.io/2021/05/09/cheng-xu-liu-cheng-kong-zhi-fang-fa/</id>
+    <published>2021-05-09T02:51:54.000Z</published>
+    <updated>2021-05-09T03:19:49.813Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;C语言关系运算符&quot;&gt;&lt;a href=&quot;#C语言关系运算符&quot; class=&quot;headerlink&quot; title=&quot;C语言关系运算符&quot;&gt;&lt;/a&gt;C语言关系运算符&lt;/h2&gt;&lt;div</summary>
+        
+      
+    
+    
+    
+    <category term="重学C语言" scheme="https://uptolimit.github.io/categories/%E9%87%8D%E5%AD%A6C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="C语言" scheme="https://uptolimit.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="编程语言" scheme="https://uptolimit.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言中的数学运算</title>
+    <link href="https://uptolimit.github.io/2021/03/30/c-yu-yan-zhong-de-shu-xue-yun-suan/"/>
+    <id>https://uptolimit.github.io/2021/03/30/c-yu-yan-zhong-de-shu-xue-yun-suan/</id>
+    <published>2021-03-30T02:47:29.000Z</published>
+    <updated>2021-05-09T02:56:47.479Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;C语言基本运算符&quot;&gt;&lt;a href=&quot;#C语言基本运算符&quot; class=&quot;headerlink&quot; title=&quot;C语言基本运算符&quot;&gt;&lt;/a&gt;C语言基本运算符&lt;/h2&gt;&lt;div</summary>
+        
+      
+    
+    
+    
+    <category term="重学C语言" scheme="https://uptolimit.github.io/categories/%E9%87%8D%E5%AD%A6C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="C语言" scheme="https://uptolimit.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="编程语言" scheme="https://uptolimit.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言基础</title>
+    <link href="https://uptolimit.github.io/2021/03/30/c-yu-yan-ji-chu/"/>
+    <id>https://uptolimit.github.io/2021/03/30/c-yu-yan-ji-chu/</id>
+    <published>2021-03-30T02:30:42.000Z</published>
+    <updated>2021-05-08T02:22:00.627Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;h2 id=&quot;汇编与C语言&quot;&gt;&lt;a href=&quot;#汇编与C语言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="重学C语言" scheme="https://uptolimit.github.io/categories/%E9%87%8D%E5%AD%A6C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="C语言" scheme="https://uptolimit.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="编程语言" scheme="https://uptolimit.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DeepFM理论与实践</title>
+    <link href="https://uptolimit.github.io/2021/03/21/deepfm-li-lun-yu-shi-jian/"/>
+    <id>https://uptolimit.github.io/2021/03/21/deepfm-li-lun-yu-shi-jian/</id>
+    <published>2021-03-21T07:26:21.000Z</published>
+    <updated>2021-03-22T13:49:09.577Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;理论背景&quot;&gt;&lt;a href=&quot;#理论背景&quot; class=&quot;headerlink&quot; title=&quot;理论背景&quot;&gt;&lt;/a&gt;理论背景&lt;/h2&gt;&lt;p&gt;DeepFM模型是2017年哈工大深圳与华为诺亚方舟联合实验室提出的，论文名称《&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="深度推荐系统" scheme="https://uptolimit.github.io/categories/%E6%B7%B1%E5%BA%A6%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="推荐系统" scheme="https://uptolimit.github.io/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="DNN" scheme="https://uptolimit.github.io/tags/DNN/"/>
+    
+    <category term="特征工程" scheme="https://uptolimit.github.io/tags/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Wide&amp;Deep论文解析与代码实现</title>
+    <link href="https://uptolimit.github.io/2021/03/21/wide-deep-lun-wen-jie-xi-yu-dai-ma-shi-xian/"/>
+    <id>https://uptolimit.github.io/2021/03/21/wide-deep-lun-wen-jie-xi-yu-dai-ma-shi-xian/</id>
+    <published>2021-03-21T06:48:45.000Z</published>
+    <updated>2021-03-21T09:45:46.218Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;论文背景&quot;&gt;&lt;a href=&quot;#论文背景&quot; class=&quot;headerlink&quot; title=&quot;论文背景&quot;&gt;&lt;/a&gt;论文背景&lt;/h2&gt;&lt;p&gt;《Wide &amp;amp; Deep Learning for Recommender Systems</summary>
+        
+      
+    
+    
+    
+    <category term="深度推荐系统" scheme="https://uptolimit.github.io/categories/%E6%B7%B1%E5%BA%A6%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="推荐系统" scheme="https://uptolimit.github.io/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="DNN" scheme="https://uptolimit.github.io/tags/DNN/"/>
+    
+    <category term="特征工程" scheme="https://uptolimit.github.io/tags/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DeepCrossing理论与实践</title>
+    <link href="https://uptolimit.github.io/2021/03/21/deepcrossing-li-lun-yu-shi-jian/"/>
+    <id>https://uptolimit.github.io/2021/03/21/deepcrossing-li-lun-yu-shi-jian/</id>
+    <published>2021-03-21T03:40:55.000Z</published>
+    <updated>2021-03-21T10:32:51.616Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;h1 id=&quot;论文背景&quot;&gt;&lt;a href=&quot;#论文背景&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="深度推荐系统" scheme="https://uptolimit.github.io/categories/%E6%B7%B1%E5%BA%A6%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="推荐系统" scheme="https://uptolimit.github.io/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="DNN" scheme="https://uptolimit.github.io/tags/DNN/"/>
+    
+    <category term="特征工程" scheme="https://uptolimit.github.io/tags/%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/"/>
+    
+  </entry>
+  
+</feed>
