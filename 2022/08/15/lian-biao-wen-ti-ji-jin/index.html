@@ -31,9 +31,9 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="/custom_css_source.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="青青子衿" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="青青子衿" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -510,16 +510,16 @@ struct ListNode {
 class Solution {
 public:
     ListNode* ReverseList(ListNode* pHead) {
-        if(pHead==NULL || pHead-&gt;next==NULL){
+        if(pHead==NULL || pHead->next==NULL){
             return pHead;
         }
-        ListNode* ans = ReverseList(pHead-&gt;next);
-        pHead-&gt;next-&gt;next=pHead;
-        pHead-&gt;next=NULL;
+        ListNode* ans = ReverseList(pHead->next);
+        pHead->next->next=pHead;
+        pHead->next=NULL;
         return ans;
     }
 };
-</cstdio></stack></code></pre>
+</code></pre>
 <h4 id="栈实现"><a href="#栈实现" class="headerlink" title="栈实现"></a>栈实现</h4><pre class=" language-lang-cpp"><code class="language-lang-cpp">/*
 struct ListNode {
     int val;
@@ -535,13 +535,13 @@ public:
     ListNode* ReverseList(ListNode* pHead) {
         ListNode * p = pHead;
         ListNode * tempNode = NULL;
-        if(pHead==NULL || pHead-&gt;next==NULL){
+        if(pHead==NULL || pHead->next==NULL){
             return pHead;
         }
-        stack <listnode *=""> num_stack;
+        stack <ListNode *> num_stack;
         while(p){
             num_stack.push(p);
-            p = p-&gt;next;
+            p = p->next;
         }
         ListNode * node = num_stack.top();
         ListNode * head = node;
@@ -549,14 +549,14 @@ public:
         while(!num_stack.empty()){
             tempNode = num_stack.top();
             num_stack.pop();
-            node-&gt;next = tempNode;
-            node = node-&gt;next;
+            node->next = tempNode;
+            node = node->next;
         }
-        node-&gt;next=NULL;
+        node->next=NULL;
         return head;
     }
 }
-</listnode></cstdio></stack></code></pre>
+</code></pre>
 <h4 id="双链表实现"><a href="#双链表实现" class="headerlink" title="双链表实现"></a>双链表实现</h4><pre class=" language-lang-cpp"><code class="language-lang-cpp">/*
 struct ListNode {
     int val;
@@ -572,15 +572,15 @@ public:
     ListNode* ReverseList(ListNode* pHead) {
         ListNode * newHead = NULL;
         while(pHead){
-            ListNode *temp = pHead-&gt;next;
-            pHead-&gt;next = newHead;
+            ListNode *temp = pHead->next;
+            pHead->next = newHead;
             newHead = pHead;
             pHead = temp;
         }
         return newHead;
     }
 };
-</cstdio></stack></code></pre>
+</code></pre>
 <h2 id="链表内指定区间反转"><a href="#链表内指定区间反转" class="headerlink" title="链表内指定区间反转"></a>链表内指定区间反转</h2><h3 id="描述-1"><a href="#描述-1" class="headerlink" title="描述"></a>描述</h3><p>将一个节点数为 size 链表 m 位置到 n 位置之间的区间反转，要求时间复杂度 $O(n)$，空间复杂度 $O(1)$。<br>例如：<br>给出的链表为 $1\to 2 \to 3 \to 4 \to 5 \to NULL, m=2,n=4$<br>返回 $1\to 4\to 3\to 2\to 5\to NULL$.</p>
 <p><strong>数据范围：</strong> 链表长度 $0 &lt; size \le 10000$，$0 &lt; m \le n \le size$，链表中每个节点的值满足 $|val| \le 1000$</p>
 <p><strong>要求：</strong>时间复杂度 $O(n)$ ，空间复杂度 $O(n)$</p>
@@ -604,20 +604,20 @@ public:
     ListNode* reverseBetween(ListNode* head, int m, int n) {
         // write code here
         ListNode * res = new ListNode(-1);
-        res-&gt;next = head;
+        res->next = head;
         ListNode * pre = res;
         ListNode * cur = head;
-        for(int i = 1; i &lt; m; i++){
+        for(int i = 1; i < m; i++){
             pre = cur;
-            cur = cur-&gt;next;
+            cur = cur->next;
         }
-        for(int i = m; i &lt; n; i++){
-            ListNode *temp = cur-&gt;next;
-            cur-&gt;next = temp-&gt;next;
-            temp-&gt;next = pre-&gt;next;
-            pre-&gt;next = temp;
+        for(int i = m; i < n; i++){
+            ListNode *temp = cur->next;
+            cur->next = temp->next;
+            temp->next = pre->next;
+            pre->next = temp;
         }
-        return res-&gt;next;
+        return res->next;
     }
 }
 </code></pre>
