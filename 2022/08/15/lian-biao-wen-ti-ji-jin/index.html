@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Damerau-Levenshtein距离算法原理与应用实践, 青青子衿">
+    <meta name="keywords" content="链表问题集锦, 青青子衿">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Damerau-Levenshtein距离算法原理与应用实践 | 青青子衿</title>
+    <title>链表问题集锦 | 青青子衿</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Damerau-Levenshtein距离算法原理与应用实践</h1>
+                    <h1 class="description center-align post-title">链表问题集锦</h1>
                 </div>
             </div>
         </div>
@@ -434,12 +434,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/" class="post-category">
+                                无人驾驶
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -448,14 +465,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-13
+                    2022-08-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-13
+                    2022-09-15
                 </div>
                 
 
@@ -474,7 +491,137 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h2><h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>给定一个单链表的头结点 <code>pHead</code> (该头节点是有值的，比如在下图，它的 <code>val</code> 是 1)，长度为 n，反转该链表后，返回新链表的表头。</p>
+<p><strong>数据范围：</strong> $0\le n\le10000$</p>
+<p><strong>要求：</strong>空间复杂度 $O(1)$ ，时间复杂度 $O(n)$ 。</p>
+<p>如当输入链表 {1,2,3} 时，经反转后，原链表变为 {3,2,1}，所以对应的输出为 {3,2,1}。</p>
+<p>以上转换过程如下图所示：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20211014/423483716_1634206291971/4A47A0DB6E60853DEDFCFDF08A5CA249" alt="img" style="zoom: 33%;"></p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><h4 id="递归实现"><a href="#递归实现" class="headerlink" title="递归实现"></a>递归实现</h4><pre class=" language-lang-cpp"><code class="language-lang-cpp">/*
+struct ListNode {
+    int val;
+    struct ListNode *next;
+    ListNode(int x) :
+            val(x), next(NULL) {
+    }
+};*/
+#include<stack>
+#include<cstdio>
+class Solution {
+public:
+    ListNode* ReverseList(ListNode* pHead) {
+        if(pHead==NULL || pHead-&gt;next==NULL){
+            return pHead;
+        }
+        ListNode* ans = ReverseList(pHead-&gt;next);
+        pHead-&gt;next-&gt;next=pHead;
+        pHead-&gt;next=NULL;
+        return ans;
+    }
+};
+</cstdio></stack></code></pre>
+<h4 id="栈实现"><a href="#栈实现" class="headerlink" title="栈实现"></a>栈实现</h4><pre class=" language-lang-cpp"><code class="language-lang-cpp">/*
+struct ListNode {
+    int val;
+    struct ListNode *next;
+    ListNode(int x) :
+            val(x), next(NULL) {
+    }
+};*/
+#include<stack>
+#include<cstdio>
+class Solution {
+public:
+    ListNode* ReverseList(ListNode* pHead) {
+        ListNode * p = pHead;
+        ListNode * tempNode = NULL;
+        if(pHead==NULL || pHead-&gt;next==NULL){
+            return pHead;
+        }
+        stack <listnode *=""> num_stack;
+        while(p){
+            num_stack.push(p);
+            p = p-&gt;next;
+        }
+        ListNode * node = num_stack.top();
+        ListNode * head = node;
+        num_stack.pop();
+        while(!num_stack.empty()){
+            tempNode = num_stack.top();
+            num_stack.pop();
+            node-&gt;next = tempNode;
+            node = node-&gt;next;
+        }
+        node-&gt;next=NULL;
+        return head;
+    }
+}
+</listnode></cstdio></stack></code></pre>
+<h4 id="双链表实现"><a href="#双链表实现" class="headerlink" title="双链表实现"></a>双链表实现</h4><pre class=" language-lang-cpp"><code class="language-lang-cpp">/*
+struct ListNode {
+    int val;
+    struct ListNode *next;
+    ListNode(int x) :
+            val(x), next(NULL) {
+    }
+};*/
+#include<stack>
+#include<cstdio>
+class Solution {
+public:
+    ListNode* ReverseList(ListNode* pHead) {
+        ListNode * newHead = NULL;
+        while(pHead){
+            ListNode *temp = pHead-&gt;next;
+            pHead-&gt;next = newHead;
+            newHead = pHead;
+            pHead = temp;
+        }
+        return newHead;
+    }
+};
+</cstdio></stack></code></pre>
+<h2 id="链表内指定区间反转"><a href="#链表内指定区间反转" class="headerlink" title="链表内指定区间反转"></a>链表内指定区间反转</h2><h3 id="描述-1"><a href="#描述-1" class="headerlink" title="描述"></a>描述</h3><p>将一个节点数为 size 链表 m 位置到 n 位置之间的区间反转，要求时间复杂度 $O(n)$，空间复杂度 $O(1)$。<br>例如：<br>给出的链表为 $1\to 2 \to 3 \to 4 \to 5 \to NULL, m=2,n=4$<br>返回 $1\to 4\to 3\to 2\to 5\to NULL$.</p>
+<p><strong>数据范围：</strong> 链表长度 $0 &lt; size \le 10000$，$0 &lt; m \le n \le size$，链表中每个节点的值满足 $|val| \le 1000$</p>
+<p><strong>要求：</strong>时间复杂度 $O(n)$ ，空间复杂度 $O(n)$</p>
+<p><strong>进阶：</strong>时间复杂度 $O(n)$，空间复杂度 $O(1)$</p>
+<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><h4 id="头插法迭代"><a href="#头插法迭代" class="headerlink" title="头插法迭代"></a>头插法迭代</h4><pre class=" language-lang-cpp"><code class="language-lang-cpp">/**
+ * struct ListNode {
+ *    int val;
+ *    struct ListNode *next;
+ * };
+ */
+
+class Solution {
+public:
+    /**
+     * 
+     * @param head ListNode类 
+     * @param m int整型 
+     * @param n int整型 
+     * @return ListNode类
+     */
+    ListNode* reverseBetween(ListNode* head, int m, int n) {
+        // write code here
+        ListNode * res = new ListNode(-1);
+        res-&gt;next = head;
+        ListNode * pre = res;
+        ListNode * cur = head;
+        for(int i = 1; i &lt; m; i++){
+            pre = cur;
+            cur = cur-&gt;next;
+        }
+        for(int i = m; i &lt; n; i++){
+            ListNode *temp = cur-&gt;next;
+            cur-&gt;next = temp-&gt;next;
+            temp-&gt;next = pre-&gt;next;
+            pre-&gt;next = temp;
+        }
+        return res-&gt;next;
+    }
+}
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -500,7 +647,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://uptolimit.github.io/2022/01/13/damerau-levenshtein-ju-chi-suan-fa-yuan-li-yu-ying-yong-shi-jian/">https://uptolimit.github.io/2022/01/13/damerau-levenshtein-ju-chi-suan-fa-yuan-li-yu-ying-yong-shi-jian/</a>
+                    <a href="https://uptolimit.github.io/2022/08/15/lian-biao-wen-ti-ji-jin/">https://uptolimit.github.io/2022/08/15/lian-biao-wen-ti-ji-jin/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -537,7 +684,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -707,9 +862,64 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/08/15/lian-biao-wen-ti-ji-jin/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="链表问题集锦">
+                        
+                        <span class="card-title">链表问题集锦</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/" class="post-category">
+                                    无人驾驶
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2022/04/26/wu-ren-jia-shi-xi-lie-yi-gai-shu/">
                     <div class="card-image">
@@ -727,9 +937,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -751,59 +961,6 @@
                     
                     <a href="/tags/%E7%AE%97%E6%B3%95/">
                         <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/10/30/bei-bao-jiu-jiang/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="背包九讲">
-                        
-                        <span class="card-title">背包九讲</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-30
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/">
-                        <span class="chip bg-color">蓝桥杯</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
-                        <span class="chip bg-color">背包问题</span>
                     </a>
                     
                 </div>
@@ -934,6 +1091,13 @@
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
