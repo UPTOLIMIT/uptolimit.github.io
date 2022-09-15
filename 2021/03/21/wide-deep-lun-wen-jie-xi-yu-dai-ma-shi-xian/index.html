@@ -31,9 +31,9 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="/custom_css_source.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="青青子衿" type="application/atom+xml">
-
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="青青子衿" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -476,7 +476,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-21
+                    2022-09-15
                 </div>
                 
 
@@ -498,8 +498,8 @@
                 <h2 id="论文背景"><a href="#论文背景" class="headerlink" title="论文背景"></a>论文背景</h2><p>《Wide &amp; Deep Learning for Recommender Systems 》这篇论文是Google于2016年发表在DLRS上的文章，该方法在Google Play的推荐业务中得到了成功的应用。</p>
 <p>在推荐系统中，我们的主要挑战之一就是同时解决Memorization和Generalization，也就是推荐系统的记忆能力和泛化能力。Memorization通过一系列人工的特征叉乘（cross-product）来构造非线性特征，捕捉稀疏特征之间的高阶相关性，能够从历史数据中学习到高频共现的特征组合。例如在CTR预估任务中利用手工构造的交叉组合特征来使线性模型具有“记忆性”，这里的记忆性是指“记忆”历史数据中曾共同出现过的特征对。Generalization为稀疏特征学习低维的稠密嵌入来捕获其中的特征相关性，能够利用特征之间的传递性去探索历史数据中从未出现过的特征组合，学习到的embeddings本身具有一定的语义信息。 </p>
 <p>以上的描述可能比较抽象，类比到我们的大脑认识新事物的过程，起初老师，父母教导我们这个世界的规则，形成对这个世界最初的启蒙，我们知道麻雀会飞，它有一对翅膀，喜鹊也可以飞，因为它也有一对翅膀。但是随着认知的拓展我们又发现并不是有翅膀就可以飞，比如鸵鸟，到这里我们认知的泛化能力产生了局限，我们通过记忆来修正繁华的规则。</p>
-<h2 id="模型结构及原理"><a href="#模型结构及原理" class="headerlink" title="模型结构及原理"></a>模型结构及原理</h2><p><img src="F:%5CMyBlog%5Csource%5C_posts%5Cimage-20210318170410345.png" alt="image-20210318170410345"></p>
-<h3 id="Wide-Models部分"><a href="#Wide-Models部分" class="headerlink" title="Wide Models部分"></a>Wide Models部分</h3><p><img src="C:%5CUsers%5CGu%5CDesktop%5Cteam-learning-rs-master%5CDeepRecommendationModel%5Cimage-20210318183126297.png" alt="image-20210318183126297" style="zoom:80%;"></p>
+<h2 id="模型结构及原理"><a href="#模型结构及原理" class="headerlink" title="模型结构及原理"></a>模型结构及原理</h2><p><img src="https://uptolimit.top/img/image-20210318170410345.png" alt="image-20210318170410345" style="zoom:80%;"></p>
+<h3 id="Wide-Models部分"><a href="#Wide-Models部分" class="headerlink" title="Wide Models部分"></a>Wide Models部分</h3><p><img src="https://uptolimit.top/img/image-20220915222635109.png" alt="image-20220915222635109" style="zoom: 50%;"></p>
 <p>Wide是一个泛化的线性模型$y=w^Tx+b$，$y$是我们要预测的结果，$x$是特征，它是一个$d$维的向量$x=[x_1,x_2,\dots,x_d]$。$w$是$d$维的权重向量$w=[w_1,w_2,\cdots,w_d]$，$b$是偏移量。特征包含两个部分，一个是原始数据中直接拿过来的数据，另一种是经过特征转化之后得到的特征。最重要的一种特征转化方式是交叉组合，定义如下：</p>
 <script type="math/tex; mode=display">
 \phi_k{(x)}=\prod^{d}_{i=1}{ {x_i}^{c_{ki} } },c_{ki}\in\{0,1\}</script><p>这里$c_{ki}$表示的是第$i$个特征的第$k$种转化函数$\phi_k$的结果。对于这个特征转化结果来说，只有所有的项都为真，最终的结果才为1，否则是0。比如“<code>AND(gender=female,language=en)</code>”这就是一个交叉特征，只有当用户的性别为女并且使用的语言是英语时，这个特征的结果才为1。通过这种方式，我们可以捕捉到特征之间的交互。以及为线性模型加入非线性的特征。</p>
@@ -507,8 +507,8 @@
 <p>如上图当中的右侧部分，Deep Models是一个前馈神经网络，它的输入是一个稀疏的特征，这个输入会在神经网络的第一层转化为一个低维度的embedding，维度量级通常在$O(10)$到$O(100)$之间，然后和一些原始的稠密特征一起递交给神经网络训练，这个模块主要被设计用来处理一些类别特征，比如性别，语言等。每一层的隐层计算方式如下：</p>
 <script type="math/tex; mode=display">
 \alpha^{l+1}=f(W^l\alpha^l+b^l)</script><p>其中$\alpha^l$是第$l$层的激活值，$b^l$是第$l$层的偏置，$W^l$是第$l$层的权重，$f$是激活函数。</p>
-<h2 id="Wide-amp-Deep-Models-联合训练"><a href="#Wide-amp-Deep-Models-联合训练" class="headerlink" title="Wide &amp; Deep Models 联合训练"></a>Wide &amp; Deep Models 联合训练</h2><p><img src="C:%5CUsers%5CGu%5CDesktop%5Cteam-learning-rs-master%5CDeepRecommendationModel%5Cimage-20210318183303549.png" alt="image-20210318183303549" style="zoom:80%;"></p>
-<p>通过加权的方式将Wide部分和Deep部分合并在一起，最上面的输出层是一个sigmoid层，或者是一个线性层，就是一个简单的线性累加，文中成为<code>joint</code>，论文中还降讲到了联合（joint）和集成（ensemble）的区别，集成是每个模型单独训练，再将模型的结果融合，相比于联合训练，集成的每个独立的模型都得学的足够好才有利于随后的回合，因此模型的size也会更大。而在联合训练中，wide部分只需要做一小部分的特征叉乘来弥补deep部分的不足，并不需要一个完整的Wide Models。在集成学习中，每个部分的参数是互不影响的，而在联合学习中，它们的参数是一起训练的。模型选取logistic损失函数，最后的预测输出概率值。公式如下：</p>
+<h2 id="Wide-amp-Deep-Models-联合训练"><a href="#Wide-amp-Deep-Models-联合训练" class="headerlink" title="Wide &amp; Deep Models 联合训练"></a>Wide &amp; Deep Models 联合训练</h2><p><img src="https://uptolimit.top/img/image-20220915222843032.png" alt="image-20220915222843032"></p>
+<p>通过加权的方式将Wide部分和Deep部分合并在一起，最上面的输出层是一个sigmoid层，或者是一个线性层，就是一个简单的线性累加，文中称为<code>joint</code>，论文中还降讲到了联合（joint）和集成（ensemble）的区别，集成是每个模型单独训练，再将模型的结果融合，相比于联合训练，集成的每个独立的模型都得学的足够好才有利于随后的回合，因此模型的size也会更大。而在联合训练中，wide部分只需要做一小部分的特征叉乘来弥补deep部分的不足，并不需要一个完整的Wide Models。在集成学习中，每个部分的参数是互不影响的，而在联合学习中，它们的参数是一起训练的。模型选取logistic损失函数，最后的预测输出概率值。公式如下：</p>
 <script type="math/tex; mode=display">
 P(Y=1|x)=\delta(w_{wide}^T[x,\phi(x)] + w_{deep}^T a^{(lf)} + b)</script><p>其中$\sigma$表示sigmoid函数，$\phi(x)$表示叉乘特征，$\alpha^{(lf)}$表示神经网络最后一层激活值，$b$表示偏置。</p>
 <p>论文中，作者通过梯度的反向传播，使用<code>mini-batch stochastic optimization</code>方法训练参数，并且对wide部分使用带L1正则的<code>FTRL(Follow-the-regularized-leader)</code>算法，对Deep Models部分使用<code>AdaGrad</code>算法。</p>
