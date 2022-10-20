@@ -6,7 +6,7 @@
   <link href="https://uptolimit.github.io/atom.xml" rel="self"/>
   
   <link href="https://uptolimit.github.io/"/>
-  <updated>2022-09-16T07:31:35.231Z</updated>
+  <updated>2022-10-20T15:43:01.480Z</updated>
   <id>https://uptolimit.github.io/</id>
   
   <author>
@@ -17,11 +17,94 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>无人驾驶——激光雷达篇</title>
+    <link href="https://uptolimit.github.io/2022/10/20/wu-ren-jia-shi-xi-lie-ji-guang-lei-da-pian/"/>
+    <id>https://uptolimit.github.io/2022/10/20/wu-ren-jia-shi-xi-lie-ji-guang-lei-da-pian/</id>
+    <published>2022-10-20T14:33:57.000Z</published>
+    <updated>2022-10-20T15:43:01.480Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;激光雷达技术简介&quot;&gt;&lt;a href=&quot;#激光雷达技术简介&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="无人驾驶" scheme="https://uptolimit.github.io/categories/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/"/>
+    
+    
+    <category term="无人驾驶" scheme="https://uptolimit.github.io/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/"/>
+    
+    <category term="算法" scheme="https://uptolimit.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性表经典笔试题解</title>
+    <link href="https://uptolimit.github.io/2022/10/12/xian-xing-biao-jing-dian-bi-shi-ti-jie/"/>
+    <id>https://uptolimit.github.io/2022/10/12/xian-xing-biao-jing-dian-bi-shi-ti-jie/</id>
+    <published>2022-10-12T08:14:47.000Z</published>
+    <updated>2022-10-12T08:23:48.218Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot; title=&quot;数组&quot;&gt;&lt;/a&gt;数组&lt;/h2&gt;&lt;h3 id=&quot;Remove-Duplicates-from-Sorted-Array&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="算法与数据结构" scheme="https://uptolimit.github.io/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+    <category term="算法" scheme="https://uptolimit.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="数据结构" scheme="https://uptolimit.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自主人工智能的机器教学(一) 工业自主人工智能</title>
+    <link href="https://uptolimit.github.io/2022/10/09/zi-zhu-ren-gong-zhi-neng-de-ji-qi-jiao-xue-yi-gong-ye-zi-zhu-ren-gong-zhi-neng/"/>
+    <id>https://uptolimit.github.io/2022/10/09/zi-zhu-ren-gong-zhi-neng-de-ji-qi-jiao-xue-yi-gong-ye-zi-zhu-ren-gong-zhi-neng/</id>
+    <published>2022-10-09T15:42:58.000Z</published>
+    <updated>2022-10-10T13:59:15.854Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;自主人工智能的真实案例&quot;&gt;&lt;a href=&quot;#自主人工智能的真实案例&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="华盛顿大学自动驾驶课程" scheme="https://uptolimit.github.io/categories/%E5%8D%8E%E7%9B%9B%E9%A1%BF%E5%A4%A7%E5%AD%A6%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E8%AF%BE%E7%A8%8B/"/>
+    
+    
+    <category term="无人驾驶" scheme="https://uptolimit.github.io/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/"/>
+    
+    <category term="算法" scheme="https://uptolimit.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="Coursera" scheme="https://uptolimit.github.io/tags/Coursera/"/>
+    
+  </entry>
+  
+  <entry>
     <title>链表问题集锦</title>
     <link href="https://uptolimit.github.io/2022/08/15/lian-biao-wen-ti-ji-jin/"/>
     <id>https://uptolimit.github.io/2022/08/15/lian-biao-wen-ti-ji-jin/</id>
     <published>2022-08-15T12:51:49.000Z</published>
-    <updated>2022-09-16T07:31:35.231Z</updated>
+    <updated>2022-09-16T11:18:13.255Z</updated>
     
     
       
@@ -44,11 +127,11 @@
   </entry>
   
   <entry>
-    <title>无人驾驶系列(一) 概述</title>
-    <link href="https://uptolimit.github.io/2022/04/26/wu-ren-jia-shi-xi-lie-yi-gai-shu/"/>
-    <id>https://uptolimit.github.io/2022/04/26/wu-ren-jia-shi-xi-lie-yi-gai-shu/</id>
+    <title>无人驾驶系列—— 概述</title>
+    <link href="https://uptolimit.github.io/2022/04/26/wu-ren-jia-shi-xi-lie-gai-shu/"/>
+    <id>https://uptolimit.github.io/2022/04/26/wu-ren-jia-shi-xi-lie-gai-shu/</id>
     <published>2022-04-26T00:52:45.000Z</published>
-    <updated>2022-09-15T11:01:57.861Z</updated>
+    <updated>2022-10-20T14:35:57.118Z</updated>
     
     
       
