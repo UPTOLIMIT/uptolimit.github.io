@@ -168,6 +168,33 @@
     
     
     <entry>
+      <title>无人驾驶——深度学习篇（Transformer）</title>
+      <link href="2022/09/12/wu-ren-jia-shi-shen-du-xue-xi-pian-transformer/"/>
+      <url>2022/09/12/wu-ren-jia-shi-shen-du-xue-xi-pian-transformer/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 无人驾驶 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 无人驾驶 </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>无人驾驶——深度学习篇（CNN）</title>
       <link href="2022/08/25/wu-ren-jia-shi-shen-du-xue-xi-pian-cnn/"/>
       <url>2022/08/25/wu-ren-jia-shi-shen-du-xue-xi-pian-cnn/</url>
@@ -249,9 +276,144 @@
     
     
     <entry>
+      <title>无人驾驶——模拟器技术篇</title>
+      <link href="2022/07/21/wu-ren-jia-shi-mo-ni-qi-ji-zhu-pian/"/>
+      <url>2022/07/21/wu-ren-jia-shi-mo-ni-qi-ji-zhu-pian/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 无人驾驶 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 无人驾驶 </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>无人驾驶——操作系统篇</title>
+      <link href="2022/07/02/wu-ren-jia-shi-cao-zuo-xi-tong-pian/"/>
+      <url>2022/07/02/wu-ren-jia-shi-cao-zuo-xi-tong-pian/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 无人驾驶 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 无人驾驶 </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>无人驾驶——高精地图篇</title>
       <link href="2022/06/21/wu-ren-jia-shi-gao-jing-di-tu-pian/"/>
       <url>2022/06/21/wu-ren-jia-shi-gao-jing-di-tu-pian/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 无人驾驶 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 无人驾驶 </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>无人驾驶——决策、规划与控制篇</title>
+      <link href="2022/05/28/wu-ren-jia-shi-jue-ce-gui-hua-yu-kong-zhi-pian/"/>
+      <url>2022/05/28/wu-ren-jia-shi-jue-ce-gui-hua-yu-kong-zhi-pian/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 无人驾驶 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 无人驾驶 </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>无人驾驶——感知系统篇</title>
+      <link href="2022/05/21/wu-ren-jia-shi-gan-zhi-xi-tong-pian/"/>
+      <url>2022/05/21/wu-ren-jia-shi-gan-zhi-xi-tong-pian/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 无人驾驶 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 无人驾驶 </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>无人驾驶——定位篇（GPS与IMU）</title>
+      <link href="2022/05/03/wu-ren-jia-shi-ding-wei-pian-gps-imu/"/>
+      <url>2022/05/03/wu-ren-jia-shi-ding-wei-pian-gps-imu/</url>
       
         <content type="html"><![CDATA[]]></content>
       
