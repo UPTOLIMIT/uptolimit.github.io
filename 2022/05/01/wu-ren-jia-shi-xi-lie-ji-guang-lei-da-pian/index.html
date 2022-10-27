@@ -31,9 +31,9 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="/custom_css_source.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="青青子衿" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="青青子衿" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -472,7 +472,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-21
+                    2022-10-27
                 </div>
                 
 
@@ -500,6 +500,44 @@
 <h3 id="激光雷达点云"><a href="#激光雷达点云" class="headerlink" title="激光雷达点云"></a>激光雷达点云</h3><p>无人车所使用的激光雷达并不是静止不动的。在无人车的行驶过程中，激光雷达同时以一定的角速度匀速转动，在这个过程中不断地发出激光并收集反射点的信息，以便得到全方位的环境信息。激光雷达在收集反射距离的过程中会同时记录该点发生的时间和水平角度，并且，每个激光发射器都有其编号和固定的垂直角度，根据这个数据就可以计算出所有反射点的坐标。激光雷达每旋转一周，收集到的所有反射点坐标的集合就形成了点云（Point Cloud）。</p>
 <p>如图所示，激光雷达通过激光反射可以测出和物体的距离（distance），因为激光的垂直角度是固定的，记作$a$，这里我们可以直接求出$z$轴坐标为$sin(a)\cdot distance$。由$cos(a)\cdot distance$可以得到$distance$在$XY$平面的投影，记作$xy_dist$。激光雷达在记录反射点距离的同时也会记录当前激光雷达转动的水平角度$b$，这样根据简单的几何转换就可以得到该点的$x$、$y$坐标，分别为$cos(b)\cdot xy_dist$和$sin(b)\cdot xy_dist$。</p>
 <p><img src="https://uptolimit.top/img/image-20221020234250470.png" alt="image-20221020234250470" style="zoom:80%;"></p>
+<h2 id="激光雷达的应用"><a href="#激光雷达的应用" class="headerlink" title="激光雷达的应用"></a>激光雷达的应用</h2><h3 id="高精地图的绘制"><a href="#高精地图的绘制" class="headerlink" title="高精地图的绘制"></a>高精地图的绘制</h3><p>高精地图不同于我们日常使用的导航地图。高精地图是由众多的点云拼接而成的，主要用于无人车的精确定位。高精地图的绘制也是通过激光雷达完成的。安装激光雷达的地图数据采集车在想要绘制高精地图的路线上多次反复行驶，并收集点云数据。后期经过人工标注，首先将过滤一些点云图中的错误信息，例如路上行驶的汽车和行人反射所形成的点，然后对多次收集到的点云进行对齐拼接，形成最终的高精地图。</p>
+<h3 id="基于点云的定位"><a href="#基于点云的定位" class="headerlink" title="基于点云的定位"></a>基于点云的定位</h3><p>激光雷达会在车辆行驶过程中不断地收集点云来了解周围的环境。我们可以很自然地想到利用这些观察到的环境信息帮助我们定位。可以把这个问题简化为 ：已知$t_0$时刻的GPS信息，$t_0$时刻的点云信息，以及无人车$t_1$时刻可能在三个位置$P_1$、$P_2$、$P_3$。求$t_1$时刻车在这三个点的概率。根据贝叶斯法则，无人车的定位问题可以简化为下面这个概率公式：</p>
+<script type="math/tex; mode=display">
+P(X_t)\approx P(Z_t|X_t)\cdot{\bar{P(X_t)}}</script><p>其中$P(Z_t|X_t)$表示给定当前位置，观测到点云信息的概率分布。其计算方式一般分为局部估计和全局估计。局部估计较简单的做法就是通过当前时刻点云和上一时刻点云的匹配，借助几何上的推导，估计出无人车在当前位置的可能性。全局估计就是利用当前时刻的点云和上面提到过的高精地图做匹配，从而得到当前车相对地图上某一位置的可能性。在实际应用中一般会将两种定位方法结合使用。第二项$\bar{P(X_t)}$表示对当前位置的预测的概率分布，这里可以简单地用GPS给出地位置信息作为预测。通过计算P1,P2,P3这三个点的后验概率，可以估算出无人车在哪一个位置的可能性最高。通过对两个概率分布相乘，可以很大程度上提高无人车定位的准确度。</p>
+<h3 id="障碍物检测"><a href="#障碍物检测" class="headerlink" title="障碍物检测"></a>障碍物检测</h3><p>在机器视觉中，一个比较难解决的问题就是判断物体的远近，基于单一摄像头抓取的2D图像无法得到准确的距离信息，而基于多摄像头生成深度图的方法需要很大的计算量，不能很好的满足无人车在实时性上的要求。另一个棘手问题是光学摄像头受光照条件的影响巨大，物体的识别准确度很不稳定。</p>
+<p>利用激光雷达生成的点云可以很大程度上解决上述两个问题，借助激光雷达本身的特性，可以反射障碍物的远近、高低甚至表面形状，做出较准确的估计，从而大大提高障碍物检测的准确度，而且其算法的复杂度低于基于摄像头的视觉算法，因此更能满足无人车的实时性要求。</p>
+<h2 id="激光雷达面临的挑战"><a href="#激光雷达面临的挑战" class="headerlink" title="激光雷达面临的挑战"></a>激光雷达面临的挑战</h2><h3 id="技术挑战：空气中的悬浮物"><a href="#技术挑战：空气中的悬浮物" class="headerlink" title="技术挑战：空气中的悬浮物"></a>技术挑战：空气中的悬浮物</h3><p>激光雷达的精度会受到天气的影响，由于空气中的悬浮物会对光速产生影响。外部环境（大雾及雨天）也会影响激光雷达的精度。</p>
+<h3 id="计算性能挑战：计算量大"><a href="#计算性能挑战：计算量大" class="headerlink" title="计算性能挑战：计算量大"></a>计算性能挑战：计算量大</h3><p>即使是16线的激光雷达，每秒要处理的点也达到了30万个。如此大量的数据处理是无人车定位算法和障碍物检测算法的实时性需要面临的一大挑战。例如之前所说的激光雷达给出的原始数据只是反射物体的距离信息，需要对所有产生的点进行几何变换，将其转换为位置坐标，其中至少涉及4次浮点运算和三次三角函数运算，而且点云在后期的处理中还有大量坐标系转转等更多复杂的运算，这些都对计算资源（CPU、GPU和FPGA）提出了很大的需求。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>型号</th>
+<th>Channel数量</th>
+<th>每秒产生的点数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Velodyne HDL-64E</td>
+<td>64 Channels</td>
+<td>2200000</td>
+</tr>
+<tr>
+<td>Velodyne HDL-32E</td>
+<td>32 Channels</td>
+<td>700000</td>
+</tr>
+<tr>
+<td>Velodyne HDL-16E</td>
+<td>16 Channels</td>
+<td>300000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="成本挑战：造价昂贵"><a href="#成本挑战：造价昂贵" class="headerlink" title="成本挑战：造价昂贵"></a>成本挑战：造价昂贵</h3><p>上面提到的Velodyne VLP-16激光雷达官网税前售价为7999美元，而Velodyne HDL-64E激光雷达售价也在10万美元以上。这些成本要加在本来就没有过高利润的汽车价格中，无疑会大大阻碍无人车的商业化。</p>
+<h2 id="总结与展望"><a href="#总结与展望" class="headerlink" title="总结与展望"></a>总结与展望</h2><p>尽管无人驾驶技术渐趋成熟，但激光雷达始终是一个绕不过去的技术。纯视觉与GPS/IMU的定位及避障方案价格虽然低，却不成熟，很难应用到室外场景中。同时，激光雷达的价格居高不下，消费者很难承受动辄几十万美元定价的无人车。因此，当务之急就是快速把系统成本特别是激光雷达的成本大幅降低。其中一个交由希望的方法是使用较低价的激光雷达，虽然会损失一些精度，但可以用其他低价的传感器与激光雷达做信息混合，较精准的推算出车辆的位置。简而言之就是用更好的算法弥补硬件传感器的不足。</p>
 
                 
             </div>
