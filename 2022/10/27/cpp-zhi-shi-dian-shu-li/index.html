@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="无人驾驶——定位篇（GPS与IMU）, 青青子衿">
+    <meta name="keywords" content="Cpp知识点梳理, 青青子衿">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>无人驾驶——定位篇（GPS与IMU） | 青青子衿</title>
+    <title>Cpp知识点梳理 | 青青子衿</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">无人驾驶——定位篇（GPS与IMU）</h1>
+                    <h1 class="description center-align post-title">Cpp知识点梳理</h1>
                 </div>
             </div>
         </div>
@@ -436,12 +436,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/">
-                                <span class="chip bg-color">无人驾驶</span>
+                            <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">编程语言</span>
                             </a>
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/CPP%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">CPP语言</span>
                             </a>
                         
                     </div>
@@ -452,8 +452,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/" class="post-category">
-                                无人驾驶
+                            <a href="/categories/%E9%87%8D%E5%AD%A6Cpp%E8%AF%AD%E8%A8%80/" class="post-category">
+                                重学Cpp语言
                             </a>
                         
                     </div>
@@ -465,14 +465,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-03
+                    2022-10-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-21
+                    2022-10-27
                 </div>
                 
 
@@ -491,7 +491,37 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="变量和基本类型"><a href="#变量和基本类型" class="headerlink" title="变量和基本类型"></a>变量和基本类型</h2><h3 id="算术类型"><a href="#算术类型" class="headerlink" title="算术类型"></a>算术类型</h3><p>C++定义了一套包括算术类型和空类型在内的基本数据类型。其中算术类型包含了字符型、整型、浮点型和布尔型。空类型不对应任何具体的值，仅用于一些特殊的场合。</p>
+<ul>
+<li><p>字符型：C++提供了集中字符类型，多数支持国际化。其中最基本的字符类型是<code>char</code>，一个<code>char</code>的空间应确保可以存放<em>机器基本字符集</em>（没有严格定义，例如ASCII码也是一种机器基本字符集）中任意字符对应的数字值。因此一个<code>char</code>的大小和一个机器字节(<code>8 bit</code>)一样。</p>
+<p>其他字符类型用于扩展字符集，如<code>wchar_t</code>、<code>char16_t</code>、<code>char32_t</code>。其中<code>wchar_t</code>类型用于确保可以存放机器最大扩展字符集中的任意一个字符，类型<code>char16_t</code>和<code>char32_t</code>则为<code>Unicode</code>字符集服务。</p>
+</li>
+<li><p>整型：用于表示不同尺寸的整型数，其中C++11新定义了<code>long long</code>类型</p>
+</li>
+<li><p>浮点型：表示单精度、双精度和扩展精度值</p>
+</li>
+<li><p>布尔型：表示真（<code>true</code>）和假（<code>false</code>）</p>
+</li>
+</ul>
+<p><em>Tips：</em>除去布尔型和字符型之外，整型还可以分为带符号的（<code>signed</code>）和无符号的（<code>unsigned</code>）。字符型可以被分为三种：<code>char</code>、<code>unsigned char</code>和<code>signed char</code>，但是字符的表现形式只有两种：带符号的和无符号的，类型<code>char</code>实际上会表现为上述两种形式中的一种，具体哪种由编译器决定。</p>
+<p><strong>选择类型的准则：</strong></p>
+<ul>
+<li>当明确知晓数值不可能为负时，选择无符号类型。</li>
+<li>当使用<code>int</code>执行整数运算时，如果数值超过了<code>int</code>的表示范围，选用<code>long long</code>，因为<code>short</code>常常显得太小，而<code>long</code>一般和<code>int</code>有着一样的尺寸。</li>
+<li>在算术表达中，不要使用<code>char</code>或者<code>bool</code>只有在存放字符或者布尔型时才使用它们。因为<code>char</code>在一些机器上是有符号的，在另外一些机器上是无符号的，因此特别容易出问题，如果需要使用一个不大的整数，务必明确指定它的类型<code>signed char</code>或<code>unsigned char</code></li>
+<li>执行浮点数运算时，使用<code>double</code>，因为<code>float</code>通常精度不够，并且<code>double</code>与<code>float</code>计算的代价相差无几，在某些机器上<code>double</code>甚至比<code>float</code>要快。一般不使用<code>long double</code>。</li>
+</ul>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>当我们把一种算术类型的值赋给另外一种类型时，类型所能表示的值的范围决定了转换的过程：</p>
+<ul>
+<li>非布尔型赋给布尔型时，<code>0-&gt;false</code>，<code>other-&gt;true</code></li>
+<li>布尔型赋给非布尔型时，<code>false-&gt;0</code>，<code>true-&gt;1</code></li>
+<li>浮点型赋给整型时，进行近似处理，截断小数部分</li>
+<li>整型赋给浮点型时，小数部分记为0；如果整型所占空间超过了浮点型的容量，精度可能有损失</li>
+<li>当赋给一个无符号类型超出它表示范围的值时，结果是初始值对无符号类型表示数值总数取模后的余数</li>
+<li>当赋给一个带符号类型超出它表示范围的值时，结果是未定义的，此时程序可能继续工作，可能崩溃，也可能生成垃圾数据。</li>
+</ul>
+<p>当在程序的某处使用了一种算术类型的值，而其实所需的是另一种类型的值时，编译器同样会执行上述的类型转换。</p>
+<h2 id="字符串、向量和数组"><a href="#字符串、向量和数组" class="headerlink" title="字符串、向量和数组"></a>字符串、向量和数组</h2><h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><h2 id="标准库"><a href="#标准库" class="headerlink" title="标准库"></a>标准库</h2><h2 id="模板与泛型编程"><a href="#模板与泛型编程" class="headerlink" title="模板与泛型编程"></a>模板与泛型编程</h2>
                 
             </div>
             <hr/>
@@ -517,7 +547,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://uptolimit.github.io/2022/05/03/wu-ren-jia-shi-ding-wei-pian-gps-imu/">https://uptolimit.github.io/2022/05/03/wu-ren-jia-shi-ding-wei-pian-gps-imu/</a>
+                    <a href="https://uptolimit.github.io/2022/10/27/cpp-zhi-shi-dian-shu-li/">https://uptolimit.github.io/2022/10/27/cpp-zhi-shi-dian-shu-li/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -555,12 +585,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/">
-                                    <span class="chip bg-color">无人驾驶</span>
+                                <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">编程语言</span>
                                 </a>
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/CPP%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">CPP语言</span>
                                 </a>
                             
                         </div>
@@ -732,17 +762,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/05/21/wu-ren-jia-shi-gan-zhi-xi-tong-pian/">
+                <a href="/2022/10/27/cpp-zhi-shi-dian-shu-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="无人驾驶——感知系统篇">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Cpp知识点梳理">
                         
-                        <span class="card-title">无人驾驶——感知系统篇</span>
+                        <span class="card-title">Cpp知识点梳理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -752,30 +783,31 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/" class="post-category">
-                                    无人驾驶
+                            <a href="/categories/%E9%87%8D%E5%AD%A6Cpp%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    重学Cpp语言
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/">
-                        <span class="chip bg-color">无人驾驶</span>
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">编程语言</span>
                     </a>
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/CPP%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">CPP语言</span>
                     </a>
                     
                 </div>
@@ -789,13 +821,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/05/01/wu-ren-jia-shi-xi-lie-ji-guang-lei-da-pian/">
+                <a href="/2022/10/12/xian-xing-biao-jing-dian-bi-shi-ti-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="无人驾驶——激光雷达篇">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="线性表经典笔试题解">
                         
-                        <span class="card-title">无人驾驶——激光雷达篇</span>
+                        <span class="card-title">线性表经典笔试题解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -806,14 +838,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/" class="post-category">
-                                    无人驾驶
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
@@ -823,12 +855,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/">
-                        <span class="chip bg-color">无人驾驶</span>
-                    </a>
-                    
                     <a href="/tags/%E7%AE%97%E6%B3%95/">
                         <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>
