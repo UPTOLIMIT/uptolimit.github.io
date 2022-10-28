@@ -476,7 +476,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-21
+                    2022-10-28
                 </div>
                 
 
@@ -497,7 +497,7 @@
             <div id="articleContent">
                 <hr>
 <h1 id="论文背景"><a href="#论文背景" class="headerlink" title="论文背景"></a>论文背景</h1><p>DeepCrossing是2016年由微软提出，旨在特征工程中减少人力特征组合的时间开销，通过模型自动学习特征的组合方式，解决特征组合的难题。是第一个企业以正式论文的形式分享推荐系统技术细节的模型。</p>
-<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><p><img src="https://raw.githubusercontent.com/UPTOLIMIT/PicBed/master//img/image-20210315215320120.png" alt="image-20210315215320120" style="zoom: 67%;"></p>
+<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><p><img src="https://uptolimit.top/img/image-20210315215320120.png" alt="image-20210315215320120" style="zoom:67%;"></p>
 <p>模型的输入是一系列独立的特征，输出是用户的点击率预测值。模型一共分为4层，分别是Embedding层，Stacking层，Multiple Residual Units层，Scoring层。</p>
 <h2 id="Embedding层"><a href="#Embedding层" class="headerlink" title="Embedding层"></a>Embedding层</h2><p>Embedding这个概念最初来源于Manifold Hypothesis（<a target="_blank" rel="noopener" href="https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/">流形假设</a>）。流形假设是指<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/38002635">“自然的原始数据是低维的流形嵌入于(embedded in)原始数据所在的高维空间”</a>，而深度学习的任务就是把高维原始数据映射到低维流形，使得原始数据变得可分，而这个映射就叫做embedding（嵌入），比如word embedding（词嵌入）就是把单词组成的句子映射到一个表征向量。久而久之，把低维流形的表征向量叫做Embedding成为一种习惯（其实是一种误用）。在本文中，Embedding 层的作用就是将从原始独立特征中提取出来的高维稀疏特征向量转换成低维稠密的Embedding向量。</p>
 <pre class=" language-lang-python"><code class="language-lang-python">def build_embedding_layers(feature_columns, input_layers_dict, is_linear):
