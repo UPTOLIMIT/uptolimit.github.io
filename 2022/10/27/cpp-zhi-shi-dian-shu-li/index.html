@@ -472,7 +472,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-27
+                    2022-10-28
                 </div>
                 
 
@@ -491,7 +491,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="变量和基本类型"><a href="#变量和基本类型" class="headerlink" title="变量和基本类型"></a>变量和基本类型</h2><h3 id="算术类型"><a href="#算术类型" class="headerlink" title="算术类型"></a>算术类型</h3><p>C++定义了一套包括算术类型和空类型在内的基本数据类型。其中算术类型包含了字符型、整型、浮点型和布尔型。空类型不对应任何具体的值，仅用于一些特殊的场合。</p>
+                <h2 id="变量和基本类型"><a href="#变量和基本类型" class="headerlink" title="变量和基本类型"></a>变量和基本类型</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>变量提供一个具名的、可供程序操作的存储空间。C++中每一个变量都有其数据类型，数据类型决定着变量所占内存空间的大小和布局方式、该空间能存储的值的范围，以及变量能参与的运算。对C++程序员来说，“变量”和“对象”一般可以互换使用。</p>
+<p><strong>初始化</strong></p>
+<p>当变量在创建时会获得一个特定的值，即被初始化，变量的初始化不是赋值，初始化的含义时创建变量时赋予其一个初始值，而赋值的含义是把对象的当前值擦除，以一个新值来代替。</p>
+<p>C++初始化问题复杂性的一个体现就是其定义了初始化的好几种不同形式</p>
+<h3 id="算术类型"><a href="#算术类型" class="headerlink" title="算术类型"></a>算术类型</h3><p>C++定义了一套包括算术类型和空类型在内的基本数据类型。其中算术类型包含了字符型、整型、浮点型和布尔型。空类型不对应任何具体的值，仅用于一些特殊的场合。</p>
 <ul>
 <li><p>字符型：C++提供了集中字符类型，多数支持国际化。其中最基本的字符类型是<code>char</code>，一个<code>char</code>的空间应确保可以存放<em>机器基本字符集</em>（没有严格定义，例如ASCII码也是一种机器基本字符集）中任意字符对应的数字值。因此一个<code>char</code>的大小和一个机器字节(<code>8 bit</code>)一样。</p>
 <p>其他字符类型用于扩展字符集，如<code>wchar_t</code>、<code>char16_t</code>、<code>char32_t</code>。其中<code>wchar_t</code>类型用于确保可以存放机器最大扩展字符集中的任意一个字符，类型<code>char16_t</code>和<code>char32_t</code>则为<code>Unicode</code>字符集服务。</p>
@@ -521,7 +525,8 @@
 <li>当赋给一个带符号类型超出它表示范围的值时，结果是未定义的，此时程序可能继续工作，可能崩溃，也可能生成垃圾数据。</li>
 </ul>
 <p>当在程序的某处使用了一种算术类型的值，而其实所需的是另一种类型的值时，编译器同样会执行上述的类型转换。</p>
-<h2 id="字符串、向量和数组"><a href="#字符串、向量和数组" class="headerlink" title="字符串、向量和数组"></a>字符串、向量和数组</h2><h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><h2 id="标准库"><a href="#标准库" class="headerlink" title="标准库"></a>标准库</h2><h2 id="模板与泛型编程"><a href="#模板与泛型编程" class="headerlink" title="模板与泛型编程"></a>模板与泛型编程</h2>
+<p>当表达式里既有带符号类型又有无符号类型，当带符号类型取值为负时会出现异常结果，这是因为带符号数会自动地转换成无符号数。</p>
+<h3 id="复合类型"><a href="#复合类型" class="headerlink" title="复合类型"></a>复合类型</h3><h2 id="字符串、向量和数组"><a href="#字符串、向量和数组" class="headerlink" title="字符串、向量和数组"></a>字符串、向量和数组</h2><h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><h2 id="标准库"><a href="#标准库" class="headerlink" title="标准库"></a>标准库</h2><h2 id="模板与泛型编程"><a href="#模板与泛型编程" class="headerlink" title="模板与泛型编程"></a>模板与泛型编程</h2>
                 
             </div>
             <hr/>
