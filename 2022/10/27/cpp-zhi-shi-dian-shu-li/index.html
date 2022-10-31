@@ -31,9 +31,9 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="/custom_css_source.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="青青子衿" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="青青子衿" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -601,10 +601,11 @@ const int *p2 = &ci;//允许改变p2的值，这是一个底层const
 <p>常量表达式是指值不会改变并且再编译过程就能得到计算结果的表达式。</p>
 <h3 id="类型处理"><a href="#类型处理" class="headerlink" title="类型处理"></a>类型处理</h3><p><strong>类型别名</strong></p>
 <p>类型别名的使用可以让复杂的类型名字变得简单明了、易于理解和使用，有助于程序员清楚的知道使用该类型的真实目的。</p>
-<pre><code>typedef double wages; //传统方法是使用typedef
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">typedef double wages; //传统方法是使用typedef
 typedef wages base,*p;//base是double的别名，p是double *的别名
 using SI = Sales_item;//C++11中引入了using的用法，SI是Sales_item的别名
-</code></pre><p><strong>auto类型说明符</strong></p>
+</code></pre>
+<p><strong>auto类型说明符</strong></p>
 <p>C++11引入了auto类型说明符，使用它能够让编译器替我们去分析表达式所属的类型，编译器通过初始值推算变量的类型。</p>
 <p><strong>decltype类型指示符</strong></p>
 <h2 id="字符串、向量和数组"><a href="#字符串、向量和数组" class="headerlink" title="字符串、向量和数组"></a>字符串、向量和数组</h2><h3 id="字符串（string）"><a href="#字符串（string）" class="headerlink" title="字符串（string）"></a>字符串（string）</h3><p><strong>定义与初始化string对象</strong></p>
