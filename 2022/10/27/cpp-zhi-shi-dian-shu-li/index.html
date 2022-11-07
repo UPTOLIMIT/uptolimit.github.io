@@ -31,9 +31,9 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="/custom_css_source.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="青青子衿" type="application/atom+xml">
-
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="青青子衿" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -472,7 +472,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-31
+                    2022-11-02
                 </div>
                 
 
@@ -668,7 +668,70 @@ string s4(n,'c');//把s4初始化为由连续n个字符c组成的串
 <li><p><code>!=,&lt;,&lt;=,&gt;=</code>以字典顺序进行比较</p>
 <h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3></li>
 </ul>
-<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><h2 id="标准库"><a href="#标准库" class="headerlink" title="标准库"></a>标准库</h2><h2 id="模板与泛型编程"><a href="#模板与泛型编程" class="headerlink" title="模板与泛型编程"></a>模板与泛型编程</h2>
+<p>我们知道可以使用下标运算符来访问string对象的字符或vector对象的元素，还有一种更通用的机制也可以实现同样的目的，即迭代器。有迭代器的类型同时拥有返回迭代器的成员。比如这些类型都有名为<code>begin</code>和<code>end</code>的成员，其中begin成员负责返回指向的第一个元素的迭代器，end成员负责返回指向对象的<strong>尾元素的下一个位置</strong>，被称为尾后迭代器，这个位置没什么实际含义，仅是一个标记而已，表示我们已经处理完了对象或容器中的所有元素。</p>
+<p><strong>标准容器迭代器的运算符</strong></p>
+<ul>
+<li><code>*iter</code>返回迭代器iter所指元素的引用</li>
+<li><code>iter-&gt;mem</code>解引用iter并获取该元素的名为mem的成员，等价于<code>(*iter).mem</code></li>
+<li><code>++iter</code>令iter指示容器中的下一个元素</li>
+<li><code>--iter</code>令iter指示容器中的上一个元素</li>
+<li><code>iter1==iter2、iter1!=iter2</code>判断两个迭代器是否相等（不相等），如果两个迭代器指示的是同一个元素或者它们是同一个容器的尾后迭代器，则相等；反之则不相等。</li>
+</ul>
+<p>所有标准库容器的迭代器都定义了<code>==</code>和<code>!=</code>。并且它们中的大多数都没有定义<code>&lt;</code>运算符，因此我们要养成使用<code>!=</code>的习惯。</p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">for (auto it = s.begin(); it != s.end() && !isspace(*it); ++it)
+    *it = toupper(*it);//将当前字符改写成大写形式
+</code></pre>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p><strong>定义和初始化内置数组</strong></p>
+<p>数组是一个复合类型，数组中元素的个数也属于数组类型的一部分，编译的时候维度应该是已知的。也就是说，维度必须是一个常量表达式。</p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">unsigned cnt = 42; //不是常量表达式
+constexpr unsigned sz = 42;//常量表达式
+int arr[10];//含有10个整数的数组
+int *parr[sz];//含有42个整型指针的数组
+string bad[cnt];//错误：cnt不是常量表达式
+string strs[get_size()];//当get_size是constexpr是正确；否则错误
+</code></pre>
+<p>如果在声明时没有指明维度，编译器会根据初始值的数量计算并推测出来；相反，如果指明了维度，那么初始值的总数量不应该超出指定的大小。如果维度比提供的初始值数量大，则用提供的初始值初始化考前的元素，剩下的元素被初始化成默认值。</p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">const unsigned sz = 3;
+int ia1[sz] = {0, 1, 2};//含有3个元素
+int a2[] = {0, 1, 2};//维度是3的数组
+int a3[5] = {0, 1, 2};//等价于a3[]={0，1，2，0，0}
+string a4[3] = {"hi", "bye"};//等价于a4[] = {"hi", "bye", ""}
+int a5[2] = {0,1,2}//错误：初始值过多
+</code></pre>
+<p><strong>字符和数组</strong></p>
+<p>字符数组有一种额外的初始化形式，我们可以用字符串字面值对此类数组初始化。当使用这种方式时，一定要注意字符串字面值的结尾处还有一个空字符，这个空字符也会像字符串的其他字符一样被拷贝到字符串数组中去：</p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">char a1[] = {'C','+','+'}; //列表初始化，没有空字符
+char a2[] = {'C','+','+','\0'};//列表初始化，含有显式的空字符
+char a3[] = "C++";//自动添加表示字符串结束的空字符
+const char a4[6] = "Daniel";//错误，没有空间可存放空字符
+</code></pre>
+<p><em>Tips：</em>不能将数组的内容拷贝给其他数组作为其初始值，也不能用数组为其他数组赋值。</p>
+<p><strong>指针和数组</strong></p>
+<p>在C++语言中，指针和数组有非常紧密的联系。使用数组的时候编译器一般会把它转换成指针。指向数组元素的指针会拥有更多的功能，string和vector的迭代器支持的运算，数组的指针全都支持。</p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">string nums[] = {"one", "two", "three"};//数组的元素是string对象
+string *p = &nums[0];//p指向nums的第一个元素
+string *p2 = nums;//等价于p2=&nums[0]
+string *ip2 = p+2;//ip2指向nums[2]
+</code></pre>
+<p>指针加上一个整数所得的结果还是一个指针。假设结果指向了一个元素，则允许解引用该结果指针：</p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">int ia[] = {0, 2, 4, 6, 8};//含有5个整数的数组
+int last = *(ia + 4);//正确：把last初始化成8，也就是ia[4]的值
+</code></pre>
+<p><strong>多维数组</strong>  </p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">int ia[3][4] = {
+    {0, 1, 2, 3},
+    {4, 5, 6, 7},
+    {8, 9, 10, 11}
+}//等价于int ia[3][4] = {0 ,1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ,11};
+</code></pre>
+<p><strong>复杂的数组声明</strong></p>
+<p>默认情况下，类型修饰符从右向左依次绑定。</p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">int *ptrs[10]; //ptrs是含有10个整型指针的数组
+int &refs[10] = /*?*/;//错误：不存在引用的数组
+int (*Parray)[10] = &arr;//Parray指向一个含有10个整数的数组
+int (&arrRef)[10] = arr;//arrRef引用一个含有10个整数的数组
+</code></pre>
+<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><h2 id="标准库"><a href="#标准库" class="headerlink" title="标准库"></a>标准库</h2><h2 id="模板与泛型编程"><a href="#模板与泛型编程" class="headerlink" title="模板与泛型编程"></a>模板与泛型编程</h2>
                 
             </div>
             <hr/>
@@ -909,18 +972,17 @@ string s4(n,'c');//把s4初始化为由连续n个字符c组成的串
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/10/27/cpp-zhi-shi-dian-shu-li/">
+                <a href="/2022/11/07/suan-fa-sui-xiang-lu-shu-zu-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Cpp学习笔记">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="算法随想录——数组篇">
                         
-                        <span class="card-title">Cpp学习笔记</span>
+                        <span class="card-title">算法随想录——数组篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -930,31 +992,30 @@ string s4(n,'c');//把s4初始化为由连续n个字符c组成的串
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-27
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-07
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%87%8D%E5%AD%A6Cpp%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    重学Cpp语言
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">编程语言</span>
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/">
+                        <span class="chip bg-color">代码随想录</span>
                     </a>
                     
-                    <a href="/tags/CPP%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">CPP语言</span>
+                    <a href="/tags/%E9%A9%BD%E9%A9%AC%E5%8D%81%E9%A9%BE%EF%BC%8C%E5%8A%9F%E5%9C%A8%E4%B8%8D%E8%88%8D/">
+                        <span class="chip bg-color">驽马十驾，功在不舍</span>
                     </a>
                     
                 </div>
