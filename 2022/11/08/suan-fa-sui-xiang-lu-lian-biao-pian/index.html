@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Numpy基础知识, 青青子衿">
+    <meta name="keywords" content="算法随想录——链表篇, 青青子衿">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Numpy基础知识 | 青青子衿</title>
+    <title>算法随想录——链表篇 | 青青子衿</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Numpy基础知识</h1>
+                    <h1 class="description center-align post-title">算法随想录——链表篇</h1>
                 </div>
             </div>
         </div>
@@ -436,16 +436,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/">
+                                <span class="chip bg-color">代码随想录</span>
                             </a>
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                                <span class="chip bg-color">数据分析</span>
-                            </a>
-                        
-                            <a href="/tags/Numpy/">
-                                <span class="chip bg-color">Numpy</span>
+                            <a href="/tags/%E9%A9%BD%E9%A9%AC%E5%8D%81%E9%A9%BE%EF%BC%8C%E5%8A%9F%E5%9C%A8%E4%B8%8D%E8%88%8D/">
+                                <span class="chip bg-color">驽马十驾，功在不舍</span>
                             </a>
                         
                     </div>
@@ -456,8 +452,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Numpy/" class="post-category">
-                                Numpy
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                算法与数据结构
                             </a>
                         
                     </div>
@@ -469,14 +465,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-12
+                    2022-11-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-07
+                    2022-11-08
                 </div>
                 
 
@@ -495,7 +491,54 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Numpy数组"><a href="#Numpy数组" class="headerlink" title="Numpy数组"></a>Numpy数组</h2><h2 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h2><h2 id="文件IO"><a href="#文件IO" class="headerlink" title="文件IO"></a>文件IO</h2><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h2 id="数组的属性"><a href="#数组的属性" class="headerlink" title="数组的属性"></a>数组的属性</h2><h2 id="数学计算"><a href="#数学计算" class="headerlink" title="数学计算"></a>数学计算</h2>
+                <h2 id="链表理论基础"><a href="#链表理论基础" class="headerlink" title="链表理论基础"></a>链表理论基础</h2><p>链表是一种通过指针串联在一起的线性结构，每一个节点由两部分组成，一个是数据域，一个是指针域，指针域存放了指向下一个节点的指针，最后一个节点的指针域指向<code>null</code>。</p>
+<h3 id="链表的类型"><a href="#链表的类型" class="headerlink" title="链表的类型"></a>链表的类型</h3><p>链表主要包含以下几种类型</p>
+<h4 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h4><p>如上所述。</p>
+<p><img src="https://uptolimit.top/img/20200806194529815.png" alt="链表1" style="zoom: 50%;"></p>
+<h4 id="双链表"><a href="#双链表" class="headerlink" title="双链表"></a>双链表</h4><p>每一个节点有两个指针域，一个指向下一个节点，一个指向上一个节点。双链表既可以向前查询也可以向后查询。如图所示：</p>
+<p><img src="https://uptolimit.top/img/20200806194559317.png" alt="链表2" style="zoom:50%;"></p>
+<h4 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h4><p>单链表的尾节点指针指向头节点，循环链表可以用来解决约瑟夫环问题。</p>
+<p><img src="https://uptolimit.top/img/20200806194629603.png" alt="链表4" style="zoom:50%;"></p>
+<h3 id="链表的定义与存储"><a href="#链表的定义与存储" class="headerlink" title="链表的定义与存储"></a>链表的定义与存储</h3><p>平时刷Leetcode的时候，链表的节点都默认定义好了，直接用就行，但是在面试的时候需要手写链表，就容易错漏百出。这里给出C/C++的链表定义如下：</p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">//单链表
+struct ListNode {
+    int val;//数据域
+    ListNode *next;//指针域
+    ListNode(int x) : val(x), next(NULL){}//节点的构造函数
+}
+</code></pre>
+<p>这里也可以不定义构造函数，C++会默认生成一个构造函数。但是这个构造函数不会初始化任何成员变量。例如：</p>
+<ul>
+<li><p>通过自己定义构造函数初始化节点：</p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">ListNode* head = new ListNode(5);
+</code></pre>
+</li>
+<li><p>使用默认构造函数初始化节点：</p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">ListNode* head = new ListNode();
+head->val = 5;
+</code></pre>
+</li>
+</ul>
+<p>所以如果不定义构造函数使用默认构造函数的话，在初始化的时候就不能直接给变量赋值！</p>
+<p>数组在内存中是连续分布的，但是链表在内存中不是连续分布的。链表通过指针域的指针链接在内存中的各个节点。所以链表中的节点在内存中不是连续分布的，而是散乱分布在内存中的某地址上，分配机制取决于操作系统的内存管理。</p>
+<p><img src="https://uptolimit.top/img/20200806194613920.png" alt="链表3" style="zoom: 80%;"></p>
+<h3 id="链表的操作"><a href="#链表的操作" class="headerlink" title="链表的操作"></a>链表的操作</h3><h4 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h4><p><img src="https://uptolimit.top/img/20200806195114541.png" alt="链表-删除节点" style="zoom: 50%;"></p>
+<h4 id="添加节点"><a href="#添加节点" class="headerlink" title="添加节点"></a>添加节点</h4><p><img src="https://uptolimit.top/img/20200806195134331.png" alt="链表-添加节点" style="zoom:50%;"></p>
+<h2 id="移除链表元素"><a href="#移除链表元素" class="headerlink" title="移除链表元素"></a>移除链表元素</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-linked-list-elements/">题目</a>：给你一个链表的头节点<code>head</code>和一个整数<code>val</code>，请你删除链表中所有满足<code>Node.val == val</code>的节点，并返回 <strong>新的头节点</strong> 。</p>
+<p>示例1：</p>
+<p><img src="https://uptolimit.top/img/removelinked-list.jpg" alt="img" style="zoom: 80%;"></p>
+<pre class=" language-lang-markdown"><code class="language-lang-markdown">输入：head = [1,2,6,3,4,5,6], val = 6
+输出：[1,2,3,4,5]
+</code></pre>
+<p>示例2：</p>
+<pre class=" language-lang-markdown"><code class="language-lang-markdown">输入：head = [], val = 1
+输出：[]
+</code></pre>
+<p>示例3：</p>
+<pre class=" language-lang-markdown"><code class="language-lang-markdown">输入：head = [7,7,7,7], val = 7
+输出：[]
+</code></pre>
+<h2 id="设计链表"><a href="#设计链表" class="headerlink" title="设计链表"></a>设计链表</h2><h2 id="翻转链表"><a href="#翻转链表" class="headerlink" title="翻转链表"></a>翻转链表</h2><h2 id="两两交换链表中的节点"><a href="#两两交换链表中的节点" class="headerlink" title="两两交换链表中的节点"></a>两两交换链表中的节点</h2><h2 id="删除链表的倒数第N个节点"><a href="#删除链表的倒数第N个节点" class="headerlink" title="删除链表的倒数第N个节点"></a>删除链表的倒数第N个节点</h2><h2 id="链表相交"><a href="#链表相交" class="headerlink" title="链表相交"></a>链表相交</h2><h2 id="环形链表"><a href="#环形链表" class="headerlink" title="环形链表"></a>环形链表</h2><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>
                 
             </div>
             <hr/>
@@ -521,7 +564,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://uptolimit.github.io/2021/05/12/numpy-ji-chu-zhi-shi/">https://uptolimit.github.io/2021/05/12/numpy-ji-chu-zhi-shi/</a>
+                    <a href="https://uptolimit.github.io/2022/11/08/suan-fa-sui-xiang-lu-lian-biao-pian/">https://uptolimit.github.io/2022/11/08/suan-fa-sui-xiang-lu-lian-biao-pian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -559,16 +602,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/">
+                                    <span class="chip bg-color">代码随想录</span>
                                 </a>
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                                    <span class="chip bg-color">数据分析</span>
-                                </a>
-                            
-                                <a href="/tags/Numpy/">
-                                    <span class="chip bg-color">Numpy</span>
+                                <a href="/tags/%E9%A9%BD%E9%A9%AC%E5%8D%81%E9%A9%BE%EF%BC%8C%E5%8A%9F%E5%9C%A8%E4%B8%8D%E8%88%8D/">
+                                    <span class="chip bg-color">驽马十驾，功在不舍</span>
                                 </a>
                             
                         </div>
@@ -740,17 +779,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/09/07/c-bi-ji-za-xiang/">
+                <a href="/2022/11/08/suan-fa-sui-xiang-lu-lian-biao-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="CPP笔记（杂项）">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="算法随想录——链表篇">
                         
-                        <span class="card-title">CPP笔记（杂项）</span>
+                        <span class="card-title">算法随想录——链表篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -760,30 +800,31 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%87%8D%E5%AD%A6C-%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    重学C++语言
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">编程语言</span>
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/">
+                        <span class="chip bg-color">代码随想录</span>
                     </a>
                     
-                    <a href="/tags/C-%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">C++语言</span>
+                    <a href="/tags/%E9%A9%BD%E9%A9%AC%E5%8D%81%E9%A9%BE%EF%BC%8C%E5%8A%9F%E5%9C%A8%E4%B8%8D%E8%88%8D/">
+                        <span class="chip bg-color">驽马十驾，功在不舍</span>
                     </a>
                     
                 </div>
@@ -797,13 +838,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/11/kuai-su-da-jian-sumo-fang-zhen-shi-li/">
+                <a href="/2022/11/07/suan-fa-sui-xiang-lu-shu-zu-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="快速搭建SUMO仿真实例">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="算法随想录——数组篇">
                         
-                        <span class="card-title">快速搭建SUMO仿真实例</span>
+                        <span class="card-title">算法随想录——数组篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -814,14 +855,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/SUMO/" class="post-category">
-                                    SUMO
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
@@ -831,16 +872,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BD%A6%E8%81%94%E7%BD%91/">
-                        <span class="chip bg-color">车联网</span>
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/">
+                        <span class="chip bg-color">代码随想录</span>
                     </a>
                     
-                    <a href="/tags/%E4%BB%BF%E7%9C%9F/">
-                        <span class="chip bg-color">仿真</span>
-                    </a>
-                    
-                    <a href="/tags/SUMO/">
-                        <span class="chip bg-color">SUMO</span>
+                    <a href="/tags/%E9%A9%BD%E9%A9%AC%E5%8D%81%E9%A9%BE%EF%BC%8C%E5%8A%9F%E5%9C%A8%E4%B8%8D%E8%88%8D/">
+                        <span class="chip bg-color">驽马十驾，功在不舍</span>
                     </a>
                     
                 </div>

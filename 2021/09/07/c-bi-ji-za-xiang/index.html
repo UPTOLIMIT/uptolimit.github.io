@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C++笔记（杂项）, 青青子衿">
+    <meta name="keywords" content="CPP笔记（杂项）, 青青子衿">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C++笔记（杂项） | 青青子衿</title>
+    <title>CPP笔记（杂项） | 青青子衿</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++笔记（杂项）</h1>
+                    <h1 class="description center-align post-title">CPP笔记（杂项）</h1>
                 </div>
             </div>
         </div>
@@ -472,7 +472,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-15
+                    2022-11-08
                 </div>
                 
 
@@ -492,6 +492,21 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><p>我们可以简单的理解一个变量的<strong>作用域（scope）</strong>一般可以被界定为变量声明语句之后、包裹了它的声明语句的最内一层<code>{}</code>之内。</p>
+<h2 id="变量初始化"><a href="#变量初始化" class="headerlink" title="变量初始化"></a>变量初始化</h2><p>对于内置类型而言，<code>new</code>仅仅是分配内存，除非后面显示加<code>()</code>，相当于调用它 的构造函数，对于自定义类型而言，只要一调用<code>new</code>，那么编译器不仅仅给它分配内存，还调用它的默认构造函数初始化，即使后面没有加<code>()</code>;</p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">int *p1 = new int[10];
+int *p2 = new int[10]();
+</code></pre>
+<h2 id="变量存储"><a href="#变量存储" class="headerlink" title="变量存储"></a>变量存储</h2><p>C++的存储方式通过存储持续性，作用域和链接性来描述。这里考察的是存储持续性，包括4种：自动存储持续性、静态存储持续性、线程存储持续性和动态存储持续性。</p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">enum string{
+    x1,
+    x2,
+    x3 = 10,
+    x4,
+    x5,
+} x;
+//函数外部访问x为静态持续变量，在没有显式初始化静态变量时，编译器默认设置为0
+//函数内部访问x时为自动存储变量，编译器不会默认初始化操作，因此内容是随机的
+</code></pre>
 <h2 id="递归问题"><a href="#递归问题" class="headerlink" title="递归问题"></a>递归问题</h2><h3 id="头递归"><a href="#头递归" class="headerlink" title="头递归"></a>头递归</h3><pre class=" language-lang-c++"><code class="language-lang-c++">int fac(int n) {
     if (n == 1) {
         return 1;
@@ -560,7 +575,7 @@ int main(){
 int add(int x, int y=5, int z);
 </code></pre>
 <h3 id="参数类型为函数"><a href="#参数类型为函数" class="headerlink" title="参数类型为函数"></a>参数类型为函数</h3><p>函数不像变量一样可以进行值传递，我们将函数作为参数传递时，需要传递它的地址。</p>
-<p><img src="https://gitee.com/Gugoole/PicBed/raw/master/e01c23d19ebab4e5988cd48c8e2a2a87f3ca9eb3.png" alt="e01c23d19ebab4e5988cd48c8e2a2a87f3ca9eb3" style="zoom:80%;"></p>
+<p><img src="https://uptolimit.top/img/e01c23d19ebab4e5988cd48c8e2a2a87f3ca9eb3.png" alt="e01c23d19ebab4e5988cd48c8e2a2a87f3ca9eb3"></p>
 <pre class=" language-lang-cpp"><code class="language-lang-cpp">int g(float (*f)(int), int a){
     return (*f)(a);
 }
@@ -572,6 +587,13 @@ int add(int x, int y=5, int z);
 </code></pre>
 <pre class=" language-lang-cpp"><code class="language-lang-cpp">g(sqrt_minus_one, number)
 </code></pre>
+<h2 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h2><p>基类将类型相关的函数与派生类不做改变直接继承的函数区分对待。对于某些函数基类希望派生函数各自定义适合自己的版本，此时基类就将这些函数声明为<strong>虚函数</strong>，</p>
+<ul>
+<li>虚函数也是类的成员函数</li>
+<li>虚函数和函数重载都实现了C++的多态性，但表现形式不一样，函数重载调用根据参数个数、参数类型进行区分，而虚函数则是根据动态联编来确定调用什么</li>
+<li>函数重载可以是类的成员函数也可以是非成员函数，虚函数必须是成员函数，否则就失效了。</li>
+<li>虚函数可以在子类中重载，也可以不重载而沿用父类中的方法。但是纯虚函数必须重载，因为在其声明类中没有函数实现。包含纯虚函数的类为抽象类，抽象类不能声明为对象，只能作为基类。                </li>
+</ul>
 <h2 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h2><p>编译器根据<strong>实参与形参的类型以及个数</strong>的最佳匹配，自动确定要调用的函数，这就是函数的重载。</p>
 <p>简而言之，函数要可以重载，两个名字相同的函数必须具有不同的形参——这里的“不同”，指的是形参的个数或者形参的类型，这两者只要有一方面不同，就可以认为是不同的形参。</p>
 <p>函数是否可以重载，与函数的返回值，以及形参的名称无关，即如果函数名称和形参类型都相同的话，不管返回值是否相同，都会被编译器判定为语法错误（函数重复定义）。</p>
@@ -657,6 +679,8 @@ class Toad{
 }
 </code></pre>
 <h3 id="类的深拷贝与浅拷贝"><a href="#类的深拷贝与浅拷贝" class="headerlink" title="类的深拷贝与浅拷贝"></a>类的深拷贝与浅拷贝</h3><p>当一个对象被建立的时候，系统会通过我们定义的构造函数新建一个对象，如果我们没有定义拷贝构造函数，系统默认的拷贝构造函数在调用的时候，就会建立一个完全相同的对象（<strong>地址也是相同的</strong>），也即意味着新的对象赋给的指针指向的实际上是被拷贝的对象所建立的堆对象，即我们所说的“<strong>浅拷贝</strong>”。相对于此，我们更希望拷贝构造的对象应该有自己的堆对象，并且堆对象内部存储的数据跟被拷贝的对象完全一样，因此我们需要自己定义拷贝构造函数。</p>
+<h3 id="多态性"><a href="#多态性" class="headerlink" title="多态性"></a>多态性</h3><p>多态性分为编译时多态性和运行时多态性，编译时多态性通过静态联编完成，例如函数重载、运算符重载；运行时多态性则通过动态联编完成，主要是通过虚函数来实现。</p>
+<h3 id="方法重载与方法重写"><a href="#方法重载与方法重写" class="headerlink" title="方法重载与方法重写"></a>方法重载与方法重写</h3><p>方法重载的返回值的类型可以不同，因为判断方法重载的方法主要是根据方法的参数不同来判定；方法重写的返回值类型需要相同，因为重写就是子类继承了父类的方法，并在此方法上重写属于自己的特征，既然是继承过来的，它的返回值类型就必须相同。</p>
 <h2 id="数组、多维数组与字符串"><a href="#数组、多维数组与字符串" class="headerlink" title="数组、多维数组与字符串"></a>数组、多维数组与字符串</h2><h3 id="二维数组的旋转"><a href="#二维数组的旋转" class="headerlink" title="二维数组的旋转"></a>二维数组的旋转</h3><h4 id="坐标变换的对应关系"><a href="#坐标变换的对应关系" class="headerlink" title="坐标变换的对应关系"></a>坐标变换的对应关系</h4><pre class=" language-lang-cpp"><code class="language-lang-cpp"># m行n列矩阵旋转90°
 for (int i = 0; i < m; i++) {
     for (int j = 0; j < n; j++) {
@@ -909,6 +933,7 @@ int main() {
 <h2 id="指针运算与类型转化"><a href="#指针运算与类型转化" class="headerlink" title="指针运算与类型转化"></a>指针运算与类型转化</h2><h3 id="隐式类型转化"><a href="#隐式类型转化" class="headerlink" title="隐式类型转化"></a>隐式类型转化</h3><p><img src="https://res.jisuanke.com/img/upload/20160706/6baa8d67540351c7839ecc9a203535d3b47a47ee.png" alt="隐式类型转换" style="zoom:80%;"></p>
 <h2 id="函数指针与函数式编程"><a href="#函数指针与函数式编程" class="headerlink" title="函数指针与函数式编程"></a>函数指针与函数式编程</h2><h3 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h3><p>使用函数地址作为函数参数，就是将一个函数指针变量作为地址传给另一个函数。函数名在表示函数代码起始地址的同时，也包括函数的返回值类型，以及参数的个数、类型、排列次序等信息。因此，在通过函数名调用函数的时候，编译器就可以自动检查实参与形参是否相符，用函数的返回值参与其他运算是，能够自动进行类型一致性检查。</p>
 <p>这种将一个函数作为参数交给另一个函数的编程范式叫做函数式编程，典型的函数式编程语言有LISP,Scala等</p>
+<p>当数组作为函数的参数时，会退化为函数指针</p>
 <pre class=" language-lang-cpp"><code class="language-lang-cpp">typedef int (* DoubleIntFunction)(double);//声明函数指针
 DoubleIntFunction funcPtr;//使用函数指针
 
@@ -973,7 +998,7 @@ new(p) Class();
 <p>因此，如果我们不再需要一个堆对象的话，我们就必须手动使用<code>delete</code>运算符或者C语言中的<code>free</code>函数来删除这个堆对象，释放对应的内存空间，否则就会造成内存泄漏。</p>
 <p>对于全局变量与静态变量，其保存在内存中的全局/静态区，即全局变量和静态变量是存储在同一块内存空间中的。我们可以简单地认为，程序启动之后，全局/静态变量就保存在这里，而程序结束之后，对应的内存空间就会自动释放。</p>
 <p>最后是常量区，实际上程序中并<strong>不存在</strong>这样一个区域，为了方便理解，我们可以简单的认为，所有的常量（以<code>const</code>开头）都存放在一起，这些区域<strong>不可释放</strong>。</p>
-<p><img src="https://gitee.com/Gugoole/PicBed/raw/master/image-20210922173258374.png" alt="image-20210922173258374" style="zoom:80%;"></p>
+<p><img src="https://uptolimit.top/img/image-20210922173258374.png" alt="image-20210922173258374" style="zoom: 50%;"></p>
 <h2 id="数据的共享与保护"><a href="#数据的共享与保护" class="headerlink" title="数据的共享与保护"></a>数据的共享与保护</h2><h3 id="常量指针与指针常量"><a href="#常量指针与指针常量" class="headerlink" title="常量指针与指针常量"></a>常量指针与指针常量</h3><ul>
 <li><p>常量指针是指指针指向的内容是常量，定义方式有两种：</p>
 <pre class=" language-lang-cpp"><code class="language-lang-cpp">const int * n;
